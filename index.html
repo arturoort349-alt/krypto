@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Krypto · Perfumes inspirados</title>
+<meta name="description" content="Krypto: fragancias inspiradas en los perfumes más famosos. Elige tu aroma, arma tu pedido y envíalo por WhatsApp.">
+<meta name="theme-color" content="#050506">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300..700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --bg:#050506;--bg2:#0d0d0f;--bg3:#18181b;--card:#0e0e10;
+  --cream:#f4f4f6;--cream2:#d4d4da;--rose:#ffffff;--amber:#d9d9e0;--amber-d:#8b8b94;
+  --txt:#f4f4f6;--mut:#9696a0;--line:rgba(255,255,255,.1);
+  --chrome:linear-gradient(100deg,#ffffff 0%,#a2a2ab 28%,#ffffff 48%,#6e6e77 72%,#ececf0 100%);
+  --ser:"Unbounded",system-ui,sans-serif;--sans:"Manrope",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);--r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+::selection{background:var(--amber);color:var(--bg)}
+.wrap{width:min(1260px,100% - 32px);margin-inline:auto}
+@media(min-width:760px){.wrap{width:min(1260px,100% - 64px)}}
+.ser{font-family:var(--ser);font-weight:400;letter-spacing:-.045em;line-height:.98}
+.it,.it .w>span{font-style:normal;font-weight:600;background:var(--chrome);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:chrome 7s linear infinite}
+@keyframes chrome{to{background-position:-220% 0}}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--amber)}
+.eyebrow::before{content:"";width:26px;height:1px;background:currentColor}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.02em;transition:transform .35s var(--ease),background .3s,color .3s,box-shadow .3s,border-color .3s;overflow:hidden;isolation:isolate}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-amber{background:linear-gradient(135deg,#ffffff 0%,#cfcfd6 32%,#8e8e97 52%,#ececf0 72%,#b0b0b8 100%);color:#0a0a0b;box-shadow:0 14px 34px -14px rgba(255,255,255,.35),inset 0 1px 0 rgba(255,255,255,.8)}
+.btn-amber::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transform:translateX(-120%);animation:shine 4s 2s infinite}
+@keyframes shine{0%{transform:translateX(-120%)}30%,100%{transform:translateX(120%)}}
+.btn-amber:hover{transform:translateY(-2px);box-shadow:0 20px 44px -12px rgba(255,255,255,.5)}
+.btn-line{border:1.5px solid var(--line);color:var(--cream)}
+.btn-line:hover{border-color:var(--amber);color:var(--amber)}
+.btn-wa{background:#25d366;color:#fff}
+.btn-wa:hover{background:#1fbe5a}
+
+/* demo strip */
+.demo{background:linear-gradient(90deg,#8e8e97,#e6e6ea,#8e8e97);color:#0a0a0b;font-size:12.5px;font-weight:700;text-align:center;padding:7px 12px;letter-spacing:.02em}
+/* promo strip */
+.promo{border-bottom:1px solid var(--line);font-size:12.5px;color:var(--mut);overflow:hidden;white-space:nowrap}
+.promo .t{display:flex;width:max-content;animation:mq 30s linear infinite}
+.promo span{padding:9px 28px;display:inline-flex;align-items:center;gap:10px}
+.promo span::after{content:"✦";color:#fff;margin-left:28px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:60;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(6,6,8,.82);backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:22px;height:70px}
+.logo{font-family:var(--ser);font-size:19px;font-weight:500;letter-spacing:.34em;display:flex;align-items:center;gap:10px;text-transform:uppercase}
+.logo img{height:30px;width:auto;mix-blend-mode:screen}
+.logo small{display:none}
+.nav ul{display:none;list-style:none;gap:30px;margin-left:auto;font-size:14px;font-weight:600}
+.nav ul a{color:rgba(255,255,255,.75);transition:color .3s;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--amber);transform:scaleX(0);transition:transform .4s var(--ease)}
+.nav ul a:hover{color:var(--cream)}.nav ul a:hover::after{transform:scaleX(1)}
+.icons{display:flex;gap:6px;margin-left:auto}
+@media(min-width:960px){.nav ul{display:flex}.icons{margin-left:20px}}
+.ibtn{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;transition:background .3s}
+.ibtn:hover{background:rgba(255,255,255,.07)}
+.ibtn svg{width:21px;height:21px}
+.badge{position:absolute;top:4px;right:3px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--amber);color:#0a0a0b;font-size:11px;font-weight:800;display:grid;place-items:center;transform:scale(0);transition:transform .4s var(--ease)}
+.badge.on{transform:scale(1)}
+.badge.pop{animation:pop .5s var(--ease)}
+@keyframes pop{40%{transform:scale(1.5)}}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+.split .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .02em .08em;margin-bottom:-.08em}
+.split .w>span{display:inline-block;transform:translateY(110%) rotate(4deg);transition:transform 1.1s var(--ease)}
+.split.in .w>span{transform:none}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 110px);display:flex;align-items:center;padding:40px 0 70px;overflow:hidden;isolation:isolate}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);z-index:-1;opacity:.55;animation:float 14s ease-in-out infinite}
+.b1{width:520px;height:520px;background:#3d3d44;right:-120px;top:-80px}
+.b2{width:420px;height:420px;background:#25252a;right:20%;bottom:-160px;animation-delay:-5s;opacity:.4}
+.b3{width:300px;height:300px;background:#2c2c33;left:-120px;top:30%;animation-delay:-9s;opacity:.45}
+.stars{position:absolute;inset:-10% -5%;z-index:0;pointer-events:none}
+.stars i{position:absolute;width:var(--s);height:var(--s);background:#fff;clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);opacity:0;animation:tw var(--d) var(--dl) ease-in-out infinite;filter:drop-shadow(0 0 4px #fff)}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:.9;transform:scale(1) rotate(45deg)}}
+@keyframes float{50%{transform:translate(40px,-30px) scale(1.08)}}
+.hero-grid{display:grid;gap:30px;align-items:center}
+@media(min-width:980px){.hero-grid{grid-template-columns:1fr 1fr}}
+.hero h1{font-size:clamp(46px,9.6vw,124px);margin:22px 0 24px}
+.hero h1 .it{color:var(--rose);display:block}
+.hero p.lead{font-size:clamp(16.5px,1.9vw,19px);color:var(--mut);max-width:470px;margin-bottom:30px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:36px;font-size:13px;color:var(--mut)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust svg{width:17px;height:17px;color:var(--amber)}
+.show{position:relative;height:clamp(420px,62vh,620px)}
+.orbit{position:absolute;left:50%;top:50%;width:min(760px,150vw);max-width:none;transform:translate(-50%,-56%) rotate(-4deg);mix-blend-mode:screen;opacity:.9;z-index:0;animation:orb 9s ease-in-out infinite;pointer-events:none}
+@keyframes orb{50%{transform:translate(-50%,-60%) rotate(-1deg) scale(1.03)}}
+.show .ring{position:absolute;left:50%;top:52%;width:min(480px,95vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;border:1px solid rgba(225,225,235,.25)}
+.show .ring::before{content:"";position:absolute;inset:34px;border-radius:50%;border:1px dashed rgba(225,225,235,.18);animation:spin 50s linear infinite}
+.show .ring::after{content:"";position:absolute;inset:18%;border-radius:50%;background:radial-gradient(circle,rgba(225,225,235,.3),transparent 70%)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bot{position:absolute;bottom:6%;transition:transform .3s linear;filter:drop-shadow(0 40px 40px rgba(0,0,0,.55))}
+.bot img{width:100%;animation:bob 6s ease-in-out infinite}
+.bot.c{left:50%;width:min(300px,58vw);margin-left:calc(min(300px,58vw)/-2);z-index:3}
+.bot.l{left:-2%;width:min(250px,46vw);bottom:7%;z-index:2}
+.bot.r{right:-2%;width:min(220px,42vw);bottom:9%;z-index:1}
+.bot.l img{animation-delay:-2s}.bot.r img{animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.floor{position:absolute;left:8%;right:8%;bottom:5%;height:30px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.55),transparent 70%);filter:blur(6px)}
+.js .bot{opacity:0}
+.js .loaded .bot{opacity:1;transition:opacity 1.2s var(--ease),transform .3s linear}
+.tagf{position:absolute;z-index:4;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.95);color:#0a0a0b;font-size:12.5px;font-weight:700;box-shadow:0 18px 40px -16px rgba(0,0,0,.7);animation:bob 7s ease-in-out infinite}
+.tagf small{display:block;font-weight:600;color:#6b6b72;font-size:11px}
+.t1{top:8%;right:4%}.t2{top:30%;left:0;animation-delay:-3s}
+
+/* marquee brands */
+.brands{border-block:1px solid var(--line);overflow:hidden;padding:22px 0}
+.brands .t{display:flex;width:max-content;animation:mq 36s linear infinite}
+.brands span{font-family:var(--ser);font-size:clamp(24px,3.4vw,40px);padding:0 34px;letter-spacing:.04em;color:rgba(255,255,255,.55);white-space:nowrap;transition:color .3s}
+.brands span:nth-child(even){font-style:italic;color:var(--rose)}
+
+/* sections */
+.sec{padding:clamp(80px,11vw,140px) 0}
+.sec-h{display:grid;gap:18px;margin-bottom:40px}
+@media(min-width:900px){.sec-h{grid-template-columns:1fr auto;align-items:end}}
+.sec-h h2{font-size:clamp(36px,6.2vw,82px);margin-top:16px}
+.sec-h h2 .it{color:var(--rose)}
+.sec-h p{color:var(--mut);max-width:420px}
+
+/* toolbar */
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:34px;position:sticky;top:70px;z-index:20;padding:12px 0;background:linear-gradient(var(--bg) 70%,transparent)}
+.seg{display:flex;padding:4px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);position:relative}
+.seg button{position:relative;z-index:1;padding:9px 18px;border-radius:999px;font-size:14px;font-weight:700;color:var(--mut);transition:color .3s}
+.seg button[aria-pressed=true]{color:#0a0a0b}
+.seg .pill{position:absolute;top:4px;bottom:4px;border-radius:999px;background:var(--cream);transition:left .45s var(--ease),width .45s var(--ease)}
+.tools .r{display:flex;gap:10px;flex:1 1 auto;justify-content:flex-end}
+.search{position:relative;flex:1 1 200px;max-width:300px}
+.search input{width:100%;height:44px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:0 16px 0 42px;font-size:14px;transition:border-color .3s}
+.search input:focus{outline:none;border-color:var(--amber)}
+.search svg{position:absolute;left:15px;top:50%;width:17px;height:17px;transform:translateY(-50%);color:var(--mut)}
+select{height:44px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);padding:0 16px;font-size:14px;font-weight:600}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(3,1fr);gap:20px}}
+@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
+.pc{position:relative;display:flex;flex-direction:column;border-radius:var(--r);background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .5s var(--ease),border-color .4s,box-shadow .5s var(--ease)}
+.pc:hover{transform:translateY(-6px);border-color:rgba(225,225,235,.35);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.pc.hide{display:none}
+.pc .ph{position:relative;aspect-ratio:4/5;background:radial-gradient(70% 55% at 50% 62%,rgba(255,255,255,.14),transparent 70%),linear-gradient(180deg,#19191d,#08080a);cursor:pointer;overflow:hidden}
+.pc .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:4%;transition:transform .7s var(--ease);}
+.pc:hover .ph img{transform:scale(1.06)}
+
+.pc .flag{border:1px solid rgba(255,255,255,.4);position:absolute;top:12px;left:12px;z-index:2;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--cream);color:#0a0a0b}
+.pc .flag.g{background:linear-gradient(135deg,#fff,#a9a9b1);color:#0a0a0b}
+.pc .notes{position:absolute;left:10px;right:10px;bottom:10px;z-index:2;display:flex;flex-wrap:wrap;gap:5px;opacity:0;transform:translateY(10px);transition:opacity .4s,transform .4s var(--ease)}
+.pc .notes span{font-size:10.5px;font-weight:700;padding:4px 9px;border-radius:999px;background:rgba(6,6,8,.78);backdrop-filter:blur(6px);color:var(--cream)}
+@media(hover:hover){.pc:hover .notes{opacity:1;transform:none}}
+.pc .info{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pc .br{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.pc h3{font-family:var(--ser);font-weight:400;letter-spacing:-.03em;font-size:clamp(15px,1.7vw,19px);line-height:1.1;cursor:pointer}
+.pc .meta{font-size:12.5px;color:var(--mut)}
+.sizes{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 4px}
+.sizes button{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut);transition:all .25s}
+.sizes button[aria-pressed=true]{border-color:var(--cream);color:var(--cream);background:rgba(255,255,255,.08)}
+.vers{display:flex;gap:6px;flex-wrap:wrap;margin:4px 0 2px}
+.vers button{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:8px;border:1px solid var(--line);color:var(--mut);background:rgba(255,255,255,.02);transition:all .25s}
+.vers button:hover{color:var(--cream);border-color:rgba(255,255,255,.3)}
+.vers button[aria-pressed=true]{background:var(--chrome);background-size:200% 100%;color:#0a0a0b;border-color:transparent}
+.vers.mv{margin:-4px 0 18px}.vers.mv button{font-size:13px;padding:8px 13px}
+.kno{font-size:11.5px;color:var(--mut);font-weight:600}
+.tiers{display:grid;gap:clamp(50px,7vw,90px)}
+.tier-h{display:flex;align-items:flex-end;gap:18px;margin-bottom:22px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.tnum{font-family:var(--ser);font-size:clamp(40px,6vw,72px);line-height:.8;font-weight:300;background:var(--chrome);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tier-h h3{font-size:clamp(26px,3.6vw,42px);margin-bottom:4px}
+.tier-h p{color:var(--mut);font-size:14.5px}
+.tp{display:inline-block;margin-left:6px;padding:3px 10px;border-radius:999px;background:var(--chrome);background-size:200% 100%;color:#0a0a0b;font-size:12.5px}
+.tier[data-t="b"] .pc{border-color:rgba(255,255,255,.22);background:linear-gradient(180deg,#141418,#0a0a0c)}
+.pc .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:8px}
+.price{font-weight:800;font-size:17px;letter-spacing:-.01em}
+.price small{display:block;font-size:11px;font-weight:600;color:var(--mut)}
+.add{width:46px;height:46px;flex:none;border-radius:50%;background:var(--cream);color:#0a0a0b;display:grid;place-items:center;transition:transform .35s var(--ease),background .3s}
+.add:hover{transform:scale(1.08) rotate(90deg);background:var(--amber)}
+.add svg{width:20px;height:20px}
+.add.ok{background:#37c26b;color:#fff;transform:none}
+@media(min-width:760px){.add{width:auto;padding:0 16px;border-radius:999px;gap:8px;display:inline-flex;align-items:center;font-weight:800;font-size:13.5px}.add:hover{transform:translateY(-2px)}.add .lbl{display:inline}}
+.add .lbl{display:none}
+.empty{display:none;text-align:center;padding:60px 20px;color:var(--mut);border:1px dashed var(--line);border-radius:var(--r)}
+.empty.on{display:block}
+.empty .ser{font-size:34px;color:var(--cream);margin-bottom:8px}
+
+/* quiz */
+.quiz{position:relative;overflow:hidden;background:linear-gradient(160deg,#131315,#050506);border-block:1px solid var(--line)}
+.quiz::before{content:"";position:absolute;width:600px;height:600px;right:-200px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%)}
+.qgrid{position:relative;display:grid;gap:40px;align-items:center}
+@media(min-width:980px){.qgrid{grid-template-columns:.9fr 1.1fr;gap:70px}}
+.qgrid h2{font-size:clamp(36px,6vw,78px);margin:16px 0 18px}
+.qgrid h2 .it{color:var(--rose)}
+.qgrid>div>p{color:var(--mut);max-width:420px}
+.qbox{position:relative;min-height:420px;border-radius:28px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:clamp(24px,4vw,40px);overflow:hidden}
+.qprog{display:flex;gap:6px;margin-bottom:26px}
+.qprog i{flex:1;height:3px;border-radius:3px;background:var(--line);overflow:hidden;position:relative}
+.qprog i::after{content:"";position:absolute;inset:0;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+.qprog i.on::after{transform:scaleX(1)}
+.qstep{display:none;animation:qin .6s var(--ease)}
+.qstep.on{display:block}
+@keyframes qin{from{opacity:0;transform:translateX(30px)}}
+.qstep h3{font-family:var(--ser);font-weight:500;font-size:clamp(26px,3.4vw,38px);line-height:1.05;margin-bottom:22px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opt{text-align:left;padding:18px 16px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:all .3s var(--ease)}
+.opt:hover{border-color:var(--amber);transform:translateY(-3px);background:rgba(225,225,235,.08)}
+.opt b{display:block;font-size:24px;margin-bottom:6px}
+.opt span{font-weight:700;font-size:15px}
+.opt small{display:block;color:var(--mut);font-size:12.5px;margin-top:2px}
+.res{display:grid;gap:12px}
+.rc{display:flex;gap:14px;align-items:center;padding:12px;border-radius:18px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.rc{cursor:pointer;transition:border-color .3s,background .3s,transform .35s var(--ease)}
+.rc:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.08);transform:translateY(-3px)}
+.rcimg{position:relative;flex:none}
+.rcplay{position:absolute;inset:0;display:grid;place-items:center}
+.rcplay svg{width:30px;height:30px;padding:8px;border-radius:50%;background:rgba(6,6,8,.75);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
+.rc img{width:76px;height:92px;object-fit:contain;border-radius:12px;background:radial-gradient(70% 55% at 50% 62%,rgba(255,255,255,.14),transparent 70%),linear-gradient(180deg,#19191d,#08080a);padding:4px;flex:none}
+.rc div{flex:1;min-width:0}
+.rc .br{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.rc h4{font-family:var(--ser);font-weight:500;font-size:20px;line-height:1.1}
+.rc p{font-size:12.5px;color:var(--mut)}
+.rc .match{font-size:11px;font-weight:800;color:#7ff0ad}
+.qback{margin-top:20px;font-size:13.5px;font-weight:700;color:var(--mut);text-decoration:underline}
+
+/* editorial */
+.edit{display:grid;gap:0;border-radius:30px;overflow:hidden;border:1px solid var(--line)}
+@media(min-width:900px){.edit{grid-template-columns:1fr 1fr}}
+.edit .img{position:relative;min-height:420px;overflow:hidden}
+.edit .img img{position:absolute;inset:0;width:100%;height:120%;object-fit:cover;filter:saturate(.75) contrast(1.08);opacity:0;scale:1.08;transition:opacity 1.6s ease,scale 7s linear;object-position:50% 30%;will-change:transform}
+.edit .txt{padding:clamp(30px,5vw,64px);background:linear-gradient(160deg,#f3f3f5,#c9c9d0);color:#0a0a0b;display:flex;flex-direction:column;justify-content:center}
+.edit .eyebrow{color:var(--amber-d)}
+.edit h2{font-size:clamp(34px,5vw,64px);margin:16px 0 18px}
+.edit h2 .it,.edit h2 .it .w>span{background:linear-gradient(100deg,#2a2a2f,#7c7c85 40%,#1a1a1e 60%,#6a6a73);-webkit-background-clip:text;background-clip:text}
+.edit p{color:#4c4c53;margin-bottom:26px;max-width:420px}
+.edit ul{list-style:none;display:grid;gap:10px;margin-bottom:30px}
+.edit li{display:flex;gap:10px;font-weight:600;font-size:15px}
+.edit li svg{width:20px;height:20px;color:#55555d;flex:none;margin-top:2px}
+.edit .btn{align-self:flex-start;background:#0a0a0b;color:var(--cream)}
+.edit .btn:hover{background:#26262b}
+
+.edit .img img.on{opacity:1;scale:1}
+.ph-dots{position:absolute;left:20px;bottom:18px;z-index:2;display:flex;gap:6px}
+.ph-dots i{width:22px;height:3px;border-radius:3px;background:rgba(255,255,255,.35);transition:background .4s,width .4s}
+.ph-dots i.on{background:#fff;width:36px}
+/* why */
+.why{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+@media(min-width:700px){.why{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1050px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{background:var(--bg);padding:30px 26px;transition:background .4s}
+.why div:hover{background:var(--bg2)}
+.why svg{width:30px;height:30px;color:var(--amber);margin-bottom:18px;transition:transform .5s var(--ease)}
+.why div:hover svg{transform:translateY(-4px) rotate(-8deg)}
+.why h3{font-family:var(--ser);font-weight:500;font-size:22px;margin-bottom:6px}
+.why p{font-size:14.5px;color:var(--mut)}
+
+/* faq */
+.faq{max-width:860px;margin-inline:auto}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;cursor:pointer;font-family:var(--ser);font-size:clamp(20px,2.4vw,26px);transition:color .3s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--amber)}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .45s var(--ease),background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .45s var(--ease)}
+details[open] summary i{background:var(--amber);color:#0a0a0b;border-color:var(--amber);transform:rotate(180deg)}
+details[open] summary i::after{transform:translate(-50%,-50%)}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+details[open] .ans{grid-template-rows:1fr}
+.ans>div{overflow:hidden}
+.ans p{padding:0 50px 22px 0;color:var(--mut)}
+
+/* footer */
+.cta-final{text-align:center;position:relative;overflow:hidden}
+.cta-final h2{font-size:clamp(40px,8.4vw,120px);margin:16px 0 24px}
+.cta-final h2 .it{color:var(--rose)}
+.cta-final p{color:var(--mut);max-width:460px;margin:0 auto 32px}
+footer{border-top:1px solid var(--line);padding:50px 0 110px;color:var(--mut);font-size:14px}
+.foot{display:grid;gap:30px}
+@media(min-width:860px){.foot{grid-template-columns:1.5fr 1fr 1fr}footer{padding-bottom:50px}}
+footer h4{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+footer li{list-style:none;margin-bottom:7px}
+footer a:hover{color:var(--cream)}
+.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;line-height:1.5;color:rgba(191,169,163,.7)}
+
+
+/* cine: perfumes especiales */
+.cine{position:relative;overflow:hidden;border-block:1px solid var(--line);background:radial-gradient(60% 50% at 30% 40%,rgba(255,255,255,.06),transparent 70%),#030304}
+.cgrid{display:grid;gap:18px}
+@media(min-width:1000px){.cgrid{grid-template-columns:1.6fr 1fr;gap:22px}}
+.screen{position:relative;border-radius:24px;overflow:hidden;background:#000;border:1px solid var(--line);box-shadow:0 50px 90px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.05);aspect-ratio:16/9}
+.screen img,.screen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.screen img{transition:transform 1.2s var(--ease),opacity .5s;filter:saturate(.85)}
+.screen:hover img{transform:scale(1.04)}
+.screen .shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 55%),linear-gradient(90deg,rgba(0,0,0,.5),transparent 60%);pointer-events:none}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.45);transition:transform .4s var(--ease),background .3s}
+.play::before{content:"";position:absolute;inset:-10px;border-radius:50%;border:1px solid rgba(255,255,255,.3);animation:ripple 2.4s infinite}
+@keyframes ripple{to{transform:scale(1.35);opacity:0}}
+.play svg{width:30px;height:30px;margin-left:4px}
+.screen:hover .play{transform:translate(-50%,-50%) scale(1.08);background:rgba(255,255,255,.22)}
+.cap{position:absolute;left:clamp(16px,3vw,30px);bottom:clamp(14px,3vw,28px);right:20px;pointer-events:none}
+.cap .br{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.cap h3{font-family:var(--ser);font-weight:400;letter-spacing:-.04em;font-size:clamp(24px,3.6vw,44px);line-height:1;margin:6px 0 4px}
+.cap p{font-size:13px;color:var(--mut)}
+.screen.playing .shade,.screen.playing .cap,.screen.playing .play{display:none}
+.cinfo{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-top:16px;padding:16px 18px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+.cinfo .ct{display:flex;align-items:center;gap:14px;min-width:0}
+.cinfo img{width:52px;height:64px;object-fit:contain;flex:none}
+.cinfo b{display:block;font-family:var(--ser);font-weight:400;letter-spacing:-.03em;font-size:18px}
+.cinfo span{font-size:13px;color:var(--mut)}
+.cinfo .btn{min-height:46px;font-size:14px}
+.plist{display:grid;gap:10px;align-content:start}
+@media(max-width:999px){.plist{grid-auto-flow:column;grid-auto-columns:minmax(230px,72%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}.plist::-webkit-scrollbar{display:none}.plist>*{scroll-snap-align:start}}
+.pi{position:relative;display:flex;gap:12px;align-items:center;text-align:left;padding:10px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.02);transition:all .35s var(--ease);overflow:hidden}
+.pi:hover{border-color:rgba(255,255,255,.3);transform:translateX(4px)}
+.pi[aria-current=true]{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.07)}
+.pi[aria-current=true]::after{content:"";position:absolute;left:0;top:18%;bottom:18%;width:3px;border-radius:3px;background:var(--chrome)}
+.pi .th{position:relative;flex:none;width:112px;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#111}
+.pi .th img{width:100%;height:100%;object-fit:cover}
+.pi .th i{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.3)}
+.pi .th i svg{width:18px;height:18px}
+.pi .br{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.pi b{display:block;font-family:var(--ser);font-weight:400;letter-spacing:-.03em;font-size:15px;line-height:1.15}
+.pi small{display:block;font-size:11.5px;color:var(--mut);margin-top:2px}
+.cnote{margin-top:16px;font-size:12px;color:rgba(150,150,160,.8)}
+.vbadge{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:800;letter-spacing:.06em;padding:6px 10px 6px 8px;border-radius:999px;background:rgba(6,6,8,.72);backdrop-filter:blur(6px);color:#fff;border:1px solid rgba(255,255,255,.3);transition:background .3s}
+.vbadge:hover{background:rgba(255,255,255,.2)}
+.vbadge svg{width:12px;height:12px}
+@media(max-width:759px){.vbadge{font-size:0;gap:0;padding:0;width:30px;height:30px;justify-content:center;top:10px;right:10px}.vbadge svg{width:12px;height:12px;margin-left:2px}}
+.vmodal{position:fixed;inset:0;z-index:98;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.vmodal.on{opacity:1;visibility:visible}
+.vmodal .box{position:relative;width:min(1100px,100%);aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;transform:scale(.94);transition:transform .5s var(--ease)}
+.vmodal.on .box{transform:none}
+.vmodal iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vmodal .mx{top:-56px;right:0;position:absolute}
+@media(max-width:700px){.vmodal .mx{top:auto;bottom:-58px;right:50%;transform:translateX(50%)}}
+.mvid{display:inline-flex;align-items:center;gap:8px;margin:-6px 0 18px;font-size:13.5px;font-weight:700;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);transition:background .3s}
+.mvid:hover{background:rgba(255,255,255,.1)}
+.mvid svg{width:14px;height:14px}
+
+
+/* revelación cinemática del quiz */
+.quiz.done .qgrid{grid-template-columns:1fr}
+.quiz.done .qintro{display:none}
+.quiz.done .qbox{padding:clamp(14px,2vw,22px)}
+.quiz.done .qprog{display:none}
+.quiz.done .qstep[data-s="3"]{animation:none}
+.reveal{position:relative;border-radius:22px;overflow:hidden;background:#000;aspect-ratio:16/9;min-height:420px;isolation:isolate}
+@media(max-width:700px){.reveal{aspect-ratio:auto;height:min(640px,82svh)}}
+.rv-vid{position:absolute;inset:0;z-index:0;overflow:hidden;opacity:0;transition:opacity 1.6s ease .3s}
+.reveal.go .rv-vid.live{opacity:1}
+.rv-vid iframe{display:block;position:absolute;left:50%;top:50%;width:max(100%,177.78vh);height:max(100%,56.25vw);min-width:177.78%;min-height:100%;transform:translate(-50%,-50%) scale(1.25);border:0;pointer-events:none}
+@media(min-width:701px){.rv-vid iframe{width:100%;height:100%;min-width:0;transform:translate(-50%,-50%) scale(1.32)}}
+.rv-vid::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.15) 75%,rgba(0,0,0,.45)),linear-gradient(0deg,rgba(0,0,0,.85),transparent 45%)}
+@media(max-width:700px){.rv-vid::after{background:linear-gradient(0deg,rgba(0,0,0,.95) 10%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.6))}}
+.rv-glow{position:absolute;inset:0;z-index:0;background:radial-gradient(50% 60% at 72% 55%,var(--tint),transparent 70%)}
+.curtain{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:#000;transition:clip-path 1.2s cubic-bezier(.77,0,.18,1)}
+.curtain{clip-path:inset(0 0 0 0)}
+.reveal.go .curtain{clip-path:inset(0 0 0 100%)}
+.seek{text-align:center}
+.seek .orb{width:120px;margin:0 auto 18px;mix-blend-mode:screen;animation:seek 1.6s linear infinite}
+@keyframes seek{0%{transform:rotate(0) scale(.95)}50%{transform:rotate(8deg) scale(1.05)}100%{transform:rotate(0) scale(.95)}}
+.seek p{font-family:var(--ser);font-size:15px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut)}
+.seek p i{display:inline-block;animation:dots 1.2s infinite}
+@keyframes dots{50%{opacity:.2}}
+.rv-txt{position:absolute;z-index:3;left:clamp(20px,4vw,48px);bottom:clamp(20px,4vw,44px);max-width:min(520px,60%)}
+@media(max-width:700px){.rv-txt{max-width:none;right:20px}}
+.rv-txt>*{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.go .rv-txt>*{opacity:1;transform:none}
+.reveal.go .rv-txt>*:nth-child(1){transition-delay:1.1s}.reveal.go .rv-txt>*:nth-child(2){transition-delay:1.25s}.reveal.go .rv-txt>*:nth-child(3){transition-delay:1.4s}.reveal.go .rv-txt>*:nth-child(4){transition-delay:1.55s}.reveal.go .rv-txt>*:nth-child(5){transition-delay:1.7s}
+.rv-txt .k{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:800;color:#fff}
+.rv-txt .k b{padding:4px 10px;border-radius:999px;background:rgba(127,240,173,.15);color:#7ff0ad;letter-spacing:.08em}
+.rv-txt .br{display:block;margin-top:14px;font-size:12px;letter-spacing:.26em;text-transform:uppercase;font-weight:800;color:var(--mut)}
+.rv-txt h3{font-family:var(--ser);font-weight:600;letter-spacing:-.05em;line-height:.95;font-size:clamp(40px,6.4vw,84px);margin:6px 0 10px;background:var(--chrome);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:chrome 7s linear infinite}
+.rv-txt p{color:#cfcfd6;font-size:15px;margin-bottom:20px;max-width:440px}
+.rv-txt .acts{display:flex;flex-wrap:wrap;gap:10px}
+.rv-txt .acts .btn{min-height:48px;font-size:14px}
+.rv-txt .btn-line{background:rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+.also{margin:22px 4px 12px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--mut)}
+.quiz.done .res{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.quiz.done .qback{margin-left:4px}
+
+.rv-tab{position:absolute;z-index:4;right:0;top:50%;display:flex;align-items:center;gap:12px;padding:10px 14px 10px 10px;border-radius:18px 0 0 18px;background:rgba(8,8,10,.62);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.28);border-right:0;color:#fff;text-align:left;opacity:0;transform:translate(30px,-50%);transition:opacity .8s ease 1.6s,transform .8s var(--ease) 1.6s,background .3s,right .6s var(--ease)}
+.reveal.go .rv-tab{opacity:1;transform:translate(0,-50%)}
+.rv-tab:hover{background:rgba(255,255,255,.16)}
+.rv-tab img{width:46px;height:58px;object-fit:contain;background:#19191d;border-radius:9px;flex:none}
+.rv-tab span{font-weight:800;font-size:14px;line-height:1.2}
+.rv-tab small{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#bdbdc6;font-weight:800}
+.rv-tab svg{width:22px;height:22px;animation:nudge 1.4s ease-in-out infinite;transition:transform .5s var(--ease)}
+@keyframes nudge{50%{translate:4px 0}}
+.rv-panel{position:absolute;z-index:3;top:0;right:0;bottom:0;width:min(420px,42%);display:flex;flex-direction:column;background:rgba(10,10,12,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-left:1px solid rgba(255,255,255,.14);transform:translateX(102%);transition:transform .7s var(--ease);overflow:auto}
+.reveal.panel .rv-panel{transform:none}
+.reveal.panel .rv-tab{right:min(420px,42%);background:rgba(255,255,255,.14)}
+.reveal.panel .rv-tab svg{transform:rotate(180deg);animation:none}
+.reveal.panel .rv-tab span{display:none}
+.reveal.panel .rv-tab img{display:none}
+.rp-img{position:relative;flex:none;height:44%;min-height:200px;background:radial-gradient(70% 55% at 50% 62%,rgba(255,255,255,.14),transparent 70%),linear-gradient(180deg,#19191d,#08080a);overflow:hidden}
+.rp-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:14px}
+.rp-info{padding:20px 22px 24px}
+.rp-info .br{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.rp-info h4{font-family:var(--ser);font-weight:500;letter-spacing:-.04em;font-size:clamp(22px,2.4vw,30px);line-height:1;margin:6px 0 4px}
+.rp-meta{font-size:13px;color:var(--mut);margin-bottom:14px}
+.rp-info .pyr{margin-bottom:14px;gap:6px}
+.rp-info .pyr div{grid-template-columns:74px 1fr;padding:8px 12px}
+.rp-info .pyr span{font-size:13px}
+.rp-buy{display:flex;align-items:center;gap:12px;margin-top:14px}
+.rp-buy .price{font-size:24px}
+.rp-buy .btn{flex:1;min-height:48px}
+.reveal.panel .rv-txt{max-width:min(440px,48%)}
+@media(max-width:700px){
+  .rv-panel{width:100%;border-left:0}
+  .reveal.panel .rv-tab{right:auto;left:0;top:22px;transform:none;border-radius:0 14px 14px 0;border:1px solid rgba(255,255,255,.28);border-left:0;padding:10px}
+  .reveal.panel .rv-txt{opacity:0;pointer-events:none}
+  .rv-tab{top:38%}
+  .rp-img{height:38%}
+}
+.col{position:relative;height:clamp(460px,64vh,640px)}
+.col .orbit{width:min(820px,160vw);transform:translate(-50%,-50%) rotate(-6deg);z-index:2;opacity:.95}
+.ph1,.ph2,.ph3{position:absolute;border-radius:26px;overflow:hidden;box-shadow:0 50px 90px -30px rgba(0,0,0,.95),0 0 0 1px rgba(255,255,255,.18);transition:transform .3s linear}
+.ph1 img,.ph2 img,.ph3 img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.08)}
+.ph1{left:16%;top:2%;width:52%;height:92%;z-index:1}
+.ph2{right:0;top:10%;width:34%;height:46%;z-index:3;rotate:5deg}
+.ph3{left:0;bottom:4%;width:30%;height:38%;z-index:3;rotate:-6deg}
+.ph1::after,.ph2::after,.ph3::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.55));pointer-events:none}
+.chip{position:absolute;z-index:4;padding:10px 14px;border-radius:14px;background:rgba(10,10,12,.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25);font-size:12.5px;font-weight:700;color:#fff;animation:bob 7s ease-in-out infinite}
+.chip small{display:block;color:#a9a9b2;font-weight:600;font-size:11px}
+.c1{left:6%;top:12%}.c2{right:4%;bottom:10%;animation-delay:-3s}
+.js .ph1,.js .ph2,.js .ph3{opacity:0;translate:0 40px;transition:opacity 1.2s var(--ease),translate 1.2s var(--ease),transform .3s linear}
+.js .loaded .ph1,.js .loaded .ph2,.js .loaded .ph3{opacity:1;translate:0 0}
+.js .loaded .ph2{transition-delay:.25s}.js .loaded .ph3{transition-delay:.45s}
+
+.rv-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:50% 30%;filter:grayscale(1) contrast(1.1) brightness(.75);animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14) translateX(-2%)}}
+.rv-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.45) 55%,rgba(0,0,0,.25)),linear-gradient(0deg,rgba(0,0,0,.85),transparent 50%)}
+/* cart drawer */
+.scrim{position:fixed;inset:0;z-index:80;background:rgba(10,5,8,.6);backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.scrim.on{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(440px,100%);background:var(--bg2);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .55s var(--ease)}
+.drawer.on{transform:none}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h2{font-family:var(--ser);font-weight:500;font-size:28px}
+.dh h2 small{font-family:var(--sans);font-size:13px;color:var(--mut);font-weight:600;margin-left:6px}
+.dbody{flex:1;overflow:auto;padding:16px 22px}
+.free{margin-bottom:16px;padding:12px 14px;border-radius:14px;background:rgba(225,225,235,.08);font-size:13px;color:var(--cream)}
+.free .bar{margin-top:8px;height:5px;border-radius:5px;background:var(--line);overflow:hidden}
+.free .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--amber-d),var(--amber));width:0;transition:width .6s var(--ease)}
+.ci{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);animation:qin .4s var(--ease)}
+.ci img{width:74px;height:90px;object-fit:contain;border-radius:12px;background:radial-gradient(70% 55% at 50% 62%,rgba(255,255,255,.14),transparent 70%),linear-gradient(180deg,#19191d,#08080a);padding:4px;flex:none}
+.ci .m{flex:1;min-width:0}
+.ci .br{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.ci h4{font-family:var(--ser);font-weight:500;font-size:18px;line-height:1.1}
+.ci .s{font-size:12.5px;color:var(--mut)}
+.ci .ctl{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px}
+.qty button{width:32px;height:32px;display:grid;place-items:center;font-size:17px;font-weight:700}
+.qty span{min-width:22px;text-align:center;font-weight:800;font-size:14px}
+.ci .rm{font-size:12px;color:var(--mut);text-decoration:underline}
+.ci .p{font-weight:800}
+.dempty{text-align:center;padding:50px 10px;color:var(--mut)}
+.dempty svg{width:60px;height:60px;color:var(--amber);opacity:.7;margin:0 auto 14px}
+.dempty .ser{font-size:30px;color:var(--cream);margin-bottom:8px}
+.dempty .btn{margin-top:18px}
+.form{margin-top:18px;display:grid;gap:12px}
+.form label{font-size:12.5px;font-weight:700;color:var(--mut);display:grid;gap:6px}
+.form input[type=text],.form textarea{width:100%;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:12px 14px;font-size:15px;resize:none}
+.form input:focus,.form textarea:focus{outline:none;border-color:var(--amber)}
+.seg2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.seg2 button{padding:12px;border-radius:14px;border:1px solid var(--line);font-weight:700;font-size:14px;transition:all .3s}
+.seg2 button[aria-pressed=true]{border-color:var(--amber);background:rgba(225,225,235,.1);color:var(--amber)}
+.gift{display:flex!important;grid-template-columns:none!important;align-items:center;gap:12px!important;padding:12px 14px;border-radius:14px;border:1px solid var(--line);cursor:pointer;color:var(--cream)!important;font-size:14px!important}
+.gift input{width:20px;height:20px;accent-color:var(--amber)}
+.df{padding:18px 22px 22px;border-top:1px solid var(--line);background:var(--bg2)}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.tot span{color:var(--mut);font-size:14px}
+.tot b{font-size:26px;font-weight:800;letter-spacing:-.02em}
+.df small{display:block;color:var(--mut);font-size:12px;margin-bottom:14px}
+.df .btn{width:100%}
+.df .btn[disabled]{opacity:.45;pointer-events:none}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:95;display:grid;place-items:end center;pointer-events:none}
+@media(min-width:800px){.modal{place-items:center}}
+.mcard{pointer-events:auto;width:min(960px,100%);max-height:92svh;overflow:auto;background:var(--bg2);border:1px solid var(--line);border-radius:28px 28px 0 0;display:grid;transform:translateY(40px);opacity:0;visibility:hidden;transition:transform .5s var(--ease),opacity .4s,visibility .4s}
+@media(min-width:800px){.mcard{grid-template-columns:1fr 1fr;border-radius:28px}}
+.modal.on .mcard{transform:none;opacity:1;visibility:visible}
+.mimg{position:relative;min-height:340px;background:radial-gradient(70% 55% at 50% 62%,rgba(255,255,255,.14),transparent 70%),linear-gradient(180deg,#19191d,#08080a)}
+.mimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:5%}
+.mx{position:absolute;top:14px;right:14px;z-index:3;width:42px;height:42px;border-radius:50%;background:rgba(6,6,8,.7);display:grid;place-items:center}
+.mx svg{width:18px;height:18px}
+.minfo{padding:clamp(24px,4vw,40px)}
+.minfo .br{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800;color:var(--amber)}
+.minfo h3{font-family:var(--ser);font-weight:400;letter-spacing:-.04em;font-size:clamp(28px,3.4vw,40px);line-height:1;margin:8px 0 6px}
+.minfo .meta{color:var(--mut);font-size:14px;margin-bottom:16px}
+.minfo .desc{color:var(--cream2);font-size:15.5px;margin-bottom:20px}
+.pyr{display:grid;gap:8px;margin-bottom:22px}
+.pyr div{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:center;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.pyr b{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.pyr span{font-size:14px}
+.minfo .sizes button{font-size:13.5px;padding:8px 14px}
+.mrow{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.mrow .price{font-size:28px}
+.mrow .btn{flex:1}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:90px;z-index:99;transform:translate(-50%,calc(100% + 140px));visibility:hidden;display:flex;align-items:center;gap:12px;padding:10px 12px 10px 10px;border-radius:999px;background:var(--cream);color:#0a0a0b;font-weight:700;font-size:14px;box-shadow:0 20px 40px -14px rgba(0,0,0,.7);transition:transform .5s var(--ease);max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.toast{transition:transform .5s var(--ease),visibility .5s}
+.toast #ttxt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.toast img{flex:none;width:38px;height:38px;object-fit:contain;border-radius:50%;background:#19191d}
+.toast button{margin-left:6px;padding:7px 14px;border-radius:999px;background:#0a0a0b;color:var(--cream);font-size:13px;font-weight:800;white-space:nowrap}
+.fly{position:fixed;z-index:100;pointer-events:none;object-fit:contain;transition:transform .8s cubic-bezier(.5,-.3,.7,1),opacity .8s;filter:drop-shadow(0 10px 14px rgba(0,0,0,.5))}
+
+.fabcart{position:fixed;right:16px;bottom:16px;z-index:70;height:58px;padding:0 20px;border-radius:999px;background:var(--amber);color:#0a0a0b;font-weight:800;display:flex;align-items:center;gap:10px;box-shadow:0 16px 36px -12px rgba(225,225,235,.8);transform:translateY(120px);transition:transform .5s var(--ease)}
+.fabcart.on{transform:none}
+.fabcart svg{width:22px;height:22px}
+@media(min-width:960px){.fabcart{display:none}.toast{bottom:24px}}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important}.js .rv,.split .w>span,.js .bot{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l1 14H5z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></g></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-chk" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5v-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.2 4.6c1.9.8 2.7.9 3.6.7a3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.9 17.8L.2 24l6.4-1.7A11.8 11.8 0 0 0 23.8 12a11.7 11.7 0 0 0-3.4-8.4z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4" stroke-linecap="round"/></g></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></g></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2s7 7.5 7 13a7 7 0 0 1-14 0c0-5.5 7-13 7-13z"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15a1 1 0 0 0 1.5.9l12-7.5a1 1 0 0 0 0-1.7l-12-7.5A1 1 0 0 0 7 4.5z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m9 6 6 6-6 6"/></symbol>
+  <symbol id="i-arr" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="demo" id="demo">Vista previa · Los precios son de ejemplo</div>
+<div class="promo" aria-hidden="true"><div class="t" id="promo"></div></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo" id="logo"><img src="img/krypto-logo.png" alt="">Krypto</a>
+    <ul>
+      <li><a href="#tienda">Tienda</a></li>
+      <li><a href="#tienda" data-go="h">Para él</a></li>
+      <li><a href="#tienda" data-go="m">Para ella</a></li>
+      <li><a href="#aroma">Encuentra tu aroma</a></li>
+    </ul>
+    <div class="icons">
+      <a class="ibtn" href="#tienda" aria-label="Buscar" id="goSearch"><svg><use href="#i-search"/></svg></a>
+      <button class="ibtn" id="cartBtn" aria-label="Abrir carrito"><svg><use href="#i-bag"/></svg><span class="badge" id="badge">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv">Perfumes inspirados · Puebla</span>
+      <h1 class="ser split" data-split>Encuentra <span class="it">tu aroma.</span></h1>
+      <p class="lead rv d2">Fragancias inspiradas en los aromas más famosos. Elige la tuya, arma tu pedido y nos llega directo por WhatsApp.</p>
+      <div class="ctas rv d3">
+        <a class="btn btn-amber" href="#tienda">Ver perfumes<svg><use href="#i-arr"/></svg></a>
+        <a class="btn btn-line" href="#aroma">¿Cuál es mi aroma?</a>
+      </div>
+      <div class="trust rv d3">
+        <span><svg><use href="#i-drop"/></svg>Inspirados en los más famosos</span>
+        <span><svg><use href="#i-chat"/></svg>Pedido por WhatsApp</span>
+        <span><svg><use href="#i-gift"/></svg>Envoltura de regalo</span>
+      </div>
+    </div>
+    <div class="col" id="col">
+  <div class="ph1" data-d="10"><img src="img/modelo-1.jpg" alt="Modelo en el mar, mojado, mirando al horizonte"></div>
+  <img class="orbit" src="img/krypto-logo.png" alt="" aria-hidden="true">
+  <div class="ph2" data-d="24"><img src="img/modelo-2.jpg" alt="Hombre elegante con perfume"></div>
+  <div class="ph3" data-d="18"><img src="img/modelo-3.jpg" alt="Mano con frasco de perfume"></div>
+  <div class="chip c1">Aromas que dejan huella<small>Para él y para ella</small></div>
+  <div class="chip c2">Pedido por WhatsApp<small>Rápido y sencillo</small></div>
+ </div>
+</section>
+
+<div class="brands" aria-hidden="true"><div class="t" id="brands"></div></div>
+
+<!-- TIENDA -->
+<section class="sec" id="tienda">
+  <div class="wrap">
+    <div class="sec-h">
+      <div><span class="eyebrow rv">La colección</span><h2 class="ser split" data-split>Nuestros <span class="it">perfumes.</span></h2></div>
+      <p class="rv d1">Tres colecciones para cada momento. Elige tu fragancia y su versión, y agrégala a tu carrito.</p>
+    </div>
+    <div class="tools">
+      <div class="seg" id="seg" role="group" aria-label="Filtrar">
+        <span class="pill"></span>
+        <button data-f="all" aria-pressed="true">Todos</button>
+        <button data-f="h" aria-pressed="false">Para él</button>
+        <button data-f="m" aria-pressed="false">Para ella</button>
+      </div>
+      <div class="r">
+        <label class="search"><span class="sr">Buscar perfume</span><svg><use href="#i-search"/></svg><input id="q" type="search" placeholder="Buscar perfume o marca"></label>
+        <label><span class="sr">Ordenar</span><select id="sort"><option value="d">Destacados</option><option value="lo">Menor precio</option><option value="hi">Mayor precio</option></select></label>
+      </div>
+    </div>
+    <div id="grid" class="tiers">
+      <div class="tier" data-t="e"><div class="tier-h rv"><span class="tnum">01</span><div><h3 class="ser">Esenciales</h3><p>Los de diario: frescos, fáciles de llevar y siempre bien. <b class="tp">$899</b></p></div></div><div class="grid"></div></div>
+      <div class="tier" data-t="s"><div class="tier-h rv"><span class="tnum">02</span><div><h3 class="ser">Signature</h3><p>Los favoritos que más nos piden. Personalidad para cualquier ocasión. <b class="tp">$979</b></p></div></div><div class="grid"></div></div>
+      <div class="tier" data-t="b"><div class="tier-h rv"><span class="tnum">03</span><div><h3 class="ser">Black <span class="it">Edition</span></h3><p>Lo más intenso y exclusivo de Krypto. Para dejar huella. <b class="tp">$1,125</b></p></div></div><div class="grid"></div></div>
+    </div>
+    <div class="empty" id="empty"><div class="ser">No encontramos ese perfume</div><p>¿Lo buscas? Pregúntanos por WhatsApp y lo conseguimos.</p></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="sec quiz" id="aroma">
+  <div class="wrap qgrid">
+    <div class="qintro">
+      <span class="eyebrow rv">Encuentra tu aroma</span>
+      <h2 class="ser split" data-split>¿No sabes <span class="it">cuál elegir?</span></h2>
+      <p class="rv d1">Responde 3 preguntas y descubre tu perfume ideal… con su película.</p>
+    </div>
+    <div class="qbox rv d1" id="qbox">
+      <div class="qprog"><i class="on"></i><i></i><i></i></div>
+      <div class="qstep on" data-s="0"><h3>¿Para quién es?</h3><div class="opts">
+        <button class="opt" data-v="h"><b>🤵</b><span>Para él</span></button>
+        <button class="opt" data-v="m"><b>💃</b><span>Para ella</span></button>
+        <button class="opt" data-v="r"><b>🎁</b><span>Es un regalo</span><small>Te ayudamos a acertar</small></button>
+        <button class="opt" data-v="x"><b>✨</b><span>Me da igual</span><small>Sorpréndeme</small></button>
+      </div></div>
+      <div class="qstep" data-s="1"><h3>¿Cuándo lo vas a usar?</h3><div class="opts">
+        <button class="opt" data-v="dia"><b>☀️</b><span>De día</span><small>Oficina, escuela</small></button>
+        <button class="opt" data-v="noche"><b>🌙</b><span>De noche</span><small>Cenas, fiestas</small></button>
+        <button class="opt" data-v="cita"><b>🌹</b><span>Una cita</span><small>Para dejar huella</small></button>
+        <button class="opt" data-v="siempre"><b>♾️</b><span>Diario</span><small>Uno para todo</small></button>
+      </div></div>
+      <div class="qstep" data-s="2"><h3>¿Qué tipo de olor te gusta?</h3><div class="opts">
+        <button class="opt" data-v="fresco"><b>🌊</b><span>Fresco</span><small>Cítricos, mar</small></button>
+        <button class="opt" data-v="dulce"><b>🍯</b><span>Dulce</span><small>Vainilla, ámbar</small></button>
+        <button class="opt" data-v="floral"><b>🌸</b><span>Floral</span><small>Rosa, jazmín</small></button>
+        <button class="opt" data-v="especiado"><b>🔥</b><span>Intenso</span><small>Especias, maderas</small></button>
+      </div></div>
+      <div class="qstep" data-s="3"><div class="reveal" id="reveal"></div><p class="also">También te pueden gustar</p><div class="res" id="res"></div><button class="qback" id="qreset">Volver a empezar</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="sec">
+  <div class="wrap">
+    <div class="edit rv">
+      <div class="img"><img class="px on" src="img/regalo-1.jpg" alt="Hombre con tatuajes sosteniendo un perfume en luz oscura" loading="lazy"><img class="px" src="img/regalo-2.jpg" alt="Reloj, lentes y colonia de hombre sobre fondo negro" loading="lazy"><span class="ph-dots"><i class="on"></i><i></i></span></div>
+      <div class="txt">
+        <span class="eyebrow">El regalo perfecto</span>
+        <h2 class="ser">Regala un <span class="it">recuerdo.</span></h2>
+        <p>Un perfume es el regalo que se recuerda todos los días. Te ayudamos a elegir y lo entregamos listo para regalar.</p>
+        <ul>
+          <li><svg><use href="#i-chk"/></svg>Envoltura de regalo al hacer tu pedido</li>
+          <li><svg><use href="#i-chk"/></svg>Asesoría por WhatsApp para acertar</li>
+          <li><svg><use href="#i-chk"/></svg>Tarjeta con tu mensaje</li>
+        </ul>
+        <a class="btn" href="#aroma">Ayúdame a elegir<svg><use href="#i-arr"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="why rv">
+      <div><svg><use href="#i-shield"/></svg><h3>Aromas inspirados</h3><p>Fragancias inspiradas en los perfumes más buscados, a un precio accesible.</p></div>
+      <div><svg><use href="#i-chat"/></svg><h3>Atención personal</h3><p>Te asesoramos por WhatsApp antes y después de tu compra.</p></div>
+      <div><svg><use href="#i-truck"/></svg><h3>Entrega</h3><p>Entrega en Puebla o envío. Lo acordamos contigo por WhatsApp.</p></div>
+      <div><svg><use href="#i-gift"/></svg><h3>Listo para regalar</h3><p>Pide envoltura de regalo desde tu carrito.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="preguntas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h" style="justify-content:center;text-align:center;grid-template-columns:1fr"><div><span class="eyebrow rv">Preguntas</span><h2 class="ser split" data-split>Antes de <span class="it">pedir.</span></h2></div></div>
+    <div class="faq rv">
+      <details open><summary>¿Son perfumes originales de marca?<i></i></summary><div class="ans"><div><p>No. Son fragancias Krypto inspiradas en los perfumes más famosos: aromas similares a mejor precio. Mencionamos el perfume en el que se inspira cada una solo como referencia del aroma.</p></div></div></details>
+      <details><summary>¿Cómo hago mi pedido?<i></i></summary><div class="ans"><div><p>Agrega tus perfumes al carrito, escribe tu nombre y cómo lo quieres recibir, y toca “Enviar pedido por WhatsApp”. Nos llega tu pedido completo y te confirmamos disponibilidad y pago.</p></div></div></details>
+      <details><summary>¿Cómo se paga?<i></i></summary><div class="ans"><div><p>Al confirmar tu pedido por WhatsApp te compartimos las formas de pago.</p></div></div></details>
+      <details><summary>¿Hacen envíos?<i></i></summary><div class="ans"><div><p>Sí. Puedes recogerlo o pedir envío a domicilio; al confirmar tu pedido te decimos el costo y tiempo de entrega.</p></div></div></details>
+      <details><summary>¿No ves el perfume que buscas?<i></i></summary><div class="ans"><div><p>Escríbenos por WhatsApp: si no lo tenemos, te decimos si lo podemos conseguir.</p></div></div></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec cta-final">
+  <div class="wrap">
+    <span class="eyebrow rv">¿Tienes dudas?</span>
+    <h2 class="ser split" data-split>Hablemos de <span class="it">aromas.</span></h2>
+    <p class="rv d1">Cuéntanos qué te gusta y te recomendamos el perfume ideal.</p>
+    <a class="btn btn-wa rv d2" id="waCta" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Escríbenos por WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><div class="logo" style="margin-bottom:12px"><img src="img/krypto-logo.png" alt="">Krypto</div><p>Fragancias inspiradas en los perfumes más famosos.</p></div>
+      <div><h4>Tienda</h4><ul><li><a href="#tienda">Todos los perfumes</a></li><li><a href="#tienda" data-go="h">Para él</a></li><li><a href="#tienda" data-go="m">Para ella</a></li><li><a href="#aroma">Encuentra tu aroma</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li><a id="waFoot" href="#" target="_blank" rel="noopener">WhatsApp</a></li><li>Puebla, México</li></ul></div>
+    </div>
+    <p class="legal">Krypto vende fragancias inspiradas y no está afiliado, patrocinado ni respaldado por ninguna de las marcas mencionadas. Los nombres de perfumes y marcas pertenecen a sus dueños y se usan solo como referencia del aroma. Fotos de ambiente: Pexels.</p>
+  </div>
+</footer>
+
+<button class="fabcart" id="fabcart"><svg><use href="#i-bag"/></svg><span id="fabtxt">Ver carrito</span></button>
+
+<!-- CART -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Carrito" aria-hidden="true">
+  <div class="dh"><h2>Tu carrito<small id="dcount"></small></h2><button class="ibtn" id="dclose" aria-label="Cerrar carrito"><svg><use href="#i-x"/></svg></button></div>
+  <div class="dbody" id="dbody"></div>
+  <div class="df" id="dfoot">
+    <div class="tot"><span>Total</span><b id="total">$0</b></div>
+    <small>Te confirmamos disponibilidad, pago y entrega por WhatsApp.</small>
+    <button class="btn btn-wa" id="send" disabled><svg><use href="#i-wa"/></svg>Enviar pedido por WhatsApp</button>
+  </div>
+</aside>
+
+<!-- MODAL -->
+<div class="scrim" id="mscrim"></div>
+<div class="modal" id="modal" aria-hidden="true"><div class="mcard" id="mcard" role="dialog" aria-modal="true" aria-label="Detalle del perfume"></div></div>
+
+<div class="vmodal" id="vmodal" aria-hidden="true"><div class="box"><button class="mx" id="vclose" aria-label="Cerrar video"><svg><use href="#i-x"/></svg></button><div id="vslot"></div></div></div>
+<div class="toast" id="toast"><img alt=""><span id="ttxt"></span><button id="tgo">Ver carrito</button></div>
+
+<script>
+/* =========================================================
+   CONFIGURA TU TIENDA AQUÍ
+   - WHATSAPP: tu número con 52 adelante, sin espacios.
+   - DEMO: true muestra la barrita de "precios de ejemplo".
+   - Precios: cámbialos en PRODUCTOS (son de ejemplo).
+   Fotos Good Girl y Montblanc Explorer: ilustraciones temporales (reemplazar con fotos reales).
+   Pexels: Valentino (Sandu Muresan), Eros Flame (Gift Habeshaw). Créditos de fotos (Wikimedia Commons): Boss Bottled (CC BY-SA 3.0); CHANEL No5 parfum (dominio público);
+   Coco mademoiselle (CC BY 3.0); Armani acqua di Giò M/F, Gaultier Le Mâle,
+   J'adore Eau Lumière (CC BY-SA 3.0); Eau Sauvage Christian Dior, Dior Sauvage
+   Verpackung, VersaceEros121, 2023 Woda toaletowa Paco Rabanne 1 Million (CC BY-SA 4.0).
+   ========================================================= */
+const CONFIG={tienda:'Krypto',WHATSAPP:'522223394256',DEMO:false,
+  promos:['Fragancias inspiradas en los más famosos','Pedidos por WhatsApp','Envoltura de regalo disponible','Entrega en Puebla y envíos']};
+
+/* =========================================================
+   CATÁLOGO EXTENDIDO: cada LÍNEA tiene varias VERSIONES.
+   n = texto del botón, full = cómo se llama completo, tipo = concentración,
+   tam = [[ml, precio], ...]  (PRECIOS DE EJEMPLO, cámbialos),
+   yt = comercial oficial de esa versión (si no tiene, usa el de la línea).
+   ========================================================= */
+const pimg=p=>'img/bottle/'+p.id+'.svg';
+const T='rgba(205,205,220,.26)';
+const LINEAS=[
+ {id:'val',tier:'s',marca:'Valentino',nombre:'Born in Roma',g:'h',fam:'Aromático afrutado',tint:T,flag:'Nuevo',
+  desc:'Fresco, jugoso y moderno. Manzana y bergamota sobre un fondo cálido de vetiver.',
+  notas:{s:'Manzana, cardamomo, bergamota',c:'Lavanda, geranio, salvia',f:'Tabaco, pachulí, vetiver'},tags:['fresco','dulce','dia','cita','siempre'],
+  vers:[{n:'Coral Fantasy',full:'Coral Fantasy',tipo:'Uomo · 100 ml',tam:[[100,370]]},
+        {n:'Intense',full:'Intense',tipo:'Uomo · 100 ml',tam:[[100,370]],desc:'Más profundo e intenso: vainilla y lavanda con un toque de cacao.'},
+        {n:'Green Stravaganza',full:'Green Stravaganza',tipo:'Uomo · 100 ml',tam:[[100,370]],desc:'Bergamota, café y vetiver: fresco con un giro verde.'}]},
+ {id:'sauv',tier:'s',marca:'Dior',nombre:'Sauvage',g:'h',fam:'Aromático fougère',tint:T,flag:'Más vendido',
+  desc:'Fresco, especiado y magnético. El aroma favorito de muchos para todos los días.',
+  notas:{s:'Bergamota, pimienta',c:'Pimienta de Sichuan, lavanda, geranio',f:'Ambroxan, cedro, ládano'},tags:['fresco','especiado','siempre','noche'],
+  vers:[{n:'EDT',full:'Eau de Toilette',tipo:'100 ml',tam:[[100,369]]},
+        {n:'Elixir',full:'Elixir',tipo:'100 ml',tam:[[100,369]],desc:'La versión más intensa: especias, regaliz y maderas.'},
+        {n:'Parfum',full:'Parfum',tipo:'100 ml',tam:[[100,369]],desc:'Más suave y elegante, con fondo de sándalo y vainilla.'}]},
+ {id:'gg',tier:'e',marca:'Carolina Herrera',nombre:'Good Girl',g:'m',fam:'Oriental floral',tint:T,flag:'Para ella',
+  desc:'Atrevido y elegante. Dulce, intenso e inolvidable.',
+  notas:{s:'Almendra, café',c:'Nardo, jazmín sambac',f:'Haba tonka, cacao'},tags:['dulce','floral','noche','cita','siempre'],
+  vers:[{n:'Suprême',full:'Suprême',tipo:'100 ml',tam:[[100,359]]},
+        {n:'Légère',full:'Légère',tipo:'100 ml',tam:[[100,359]],desc:'Más ligero y luminoso, ideal para el día.'}]},
+ {id:'flame',tier:'s',marca:'Versace',nombre:'Eros',g:'h',fam:'Amaderado especiado',tint:T,flag:'Para la noche',
+  desc:'Intenso y seductor, con un fondo cálido de vainilla.',
+  notas:{s:'Limón, naranja amarga, mandarina, pimienta negra',c:'Geranio, rosa, pimienta',f:'Vainilla, haba tonka, sándalo, cedro'},tags:['especiado','dulce','noche','cita'],
+  vers:[{n:'Flame',full:'Flame',tipo:'100 ml',tam:[[100,379]],desc:'El más ardiente: cítricos y pimienta sobre vainilla.'},
+        {n:'Eros EDP',full:'Eau de Parfum',tipo:'100 ml',tam:[[100,359]],desc:'Menta y manzana verde con fondo dulce de vainilla.'}]},
+ {id:'adgh',tier:'e',marca:'Giorgio Armani',nombre:'Acqua di Giò',g:'h',fam:'Aromático acuático',tint:T,flag:'Clásico',
+  desc:'La frescura del mar mediterráneo. Limpio, ligero y perfecto para el día.',
+  notas:{s:'Lima, limón, bergamota, notas marinas',c:'Jazmín, romero',f:'Almizcle blanco, cedro, pachulí'},tags:['fresco','dia','siempre'],
+  vers:[{n:'EDT',full:'Eau de Toilette',tipo:'100 ml',tam:[[100,359]]},
+        {n:'Profondo',full:'Profondo',tipo:'100 ml',tam:[[100,379]],desc:'Más profundo y marino, como meterse al mar de noche.'}]},
+ {id:'mb',tier:'b',marca:'Montblanc',nombre:'Explorer',g:'h',fam:'Amaderado aromático',tint:T,
+  desc:'Para el que no se queda quieto: fresco, amaderado y con un toque de cuero.',
+  notas:{s:'Bergamota, pimienta rosa, salvia',c:'Vetiver, cuero',f:'Pachulí, ambroxan'},tags:['fresco','especiado','dia','siempre'],
+  vers:[{n:'Explorer',full:'',tipo:'100 ml',tam:[[100,399]]}]},
+ {id:'boss',tier:'e',marca:'Hugo Boss',nombre:'Bottled Night',g:'h',fam:'Amaderado',tint:T,
+  desc:'Elegante y nocturno: maderas suaves con un toque floral.',
+  notas:{s:'Abedul, cardamomo',c:'Lavanda, violeta',f:'Madera de Louro, almizcle'},tags:['especiado','noche','cita'],
+  vers:[{n:'Bottled Night',full:'',tipo:'100 ml',tam:[[100,350]]}]},
+ {id:'male',tier:'b',marca:'Jean Paul Gaultier',nombre:'Le Male',g:'h',fam:'Oriental fougère',tint:T,
+  desc:'Lavanda fresca y vainilla cálida. Un clásico que nunca falla.',
+  notas:{s:'Lavanda, menta, cardamomo, bergamota',c:'Canela, flor de azahar',f:'Vainilla, haba tonka, sándalo, ámbar'},tags:['dulce','cita','noche'],
+  vers:[{n:'Le Male',full:'',tipo:'125 ml',tam:[[125,380]]},
+        {n:'Elixir',full:'Elixir',tipo:'125 ml',tam:[[125,379]],desc:'Más dulce e intenso: miel, tabaco y haba tonka.'},
+        {n:'Blue',full:'Blue',tipo:'125 ml',tam:[[125,369]]},
+        {n:'In The Navy',full:'In The Navy',tipo:'125 ml',tam:[[125,369]]}]}
+];
+/* se generan solas: una ficha por versión */
+/* PRECIOS POR COLECCIÓN */
+const PRECIO={e:899,s:979,b:1125};
+const PRODUCTOS=[],VIDEOS={};
+LINEAS.forEach((L,li)=>L.vers.forEach((v,vi)=>{
+  const id=L.id+(vi?'-'+vi:'');const base=v.nombre||L.nombre;
+  const p={...L,id,li,vi,line:L.id,vname:v.n,ref:L.marca+' '+base+(v.full?' '+v.full:''),nombre:'Krypto Nº '+String(PRODUCTOS.length+1).padStart(2,'0'),tipo:v.tipo,tam:v.tam.map(t=>[t[0],PRECIO[L.tier]]),img:'marca/'+id,flag:vi?(v.flag||''):L.flag,desc:v.desc||L.desc};
+  delete p.vers;delete p.yt;delete p.t;delete p.thumb;PRODUCTOS.push(p);
+}));
+const LDEF=PRODUCTOS.filter(p=>p.vi===0);
+</script>
+<script>
+(()=>{
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+const money=n=>'$'+n.toLocaleString('es-MX');
+const byId=Object.fromEntries(PRODUCTOS.map(p=>[p.id,p]));
+const wa=t=>`https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(t)}`;
+const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(_){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(_){}}};
+
+if(!CONFIG.DEMO)$('#demo').remove();
+$('#waCta').href=$('#waFoot').href=wa(`Hola ${CONFIG.tienda}, quiero que me recomienden un perfume.`);
+const rep=(el,arr,n)=>{const h=arr.map(t=>`<span>${t}</span>`).join('');el.innerHTML=h.repeat(n)};
+rep($('#promo'),CONFIG.promos,4);
+{const st=$('#stars');if(st)st.innerHTML=Array.from({length:26},()=>`<i style="left:${Math.random()*100}%;top:${Math.random()*100}%;--s:${6+Math.random()*12}px;--d:${3+Math.random()*4}s;--dl:${-Math.random()*6}s"></i>`).join('')}
+rep($('#brands'),['Fresco','Amaderado','Intenso','Dulce','Elegante','Seductor','Marino','Especiado'],4);
+
+/* split words */
+$$('[data-split]').forEach(h=>{const walk=n=>[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(p=>{if(!p)return;if(/^\s+$/.test(p))return f.appendChild(document.createTextNode(p));const w=document.createElement('span');w.className='w';w.innerHTML=`<span></span>`;w.firstChild.textContent=p;f.appendChild(w)});c.replaceWith(f)}else if(c.nodeType===1)walk(c)});walk(h);$$('.w>span',h).forEach((s,i)=>s.style.transitionDelay=i*.08+'s')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+const observe=()=>$$('.rv:not(.in),.split:not(.in)').forEach(el=>io.observe(el));observe();
+
+/* hero bottles */
+const show=$('#col');requestAnimationFrame(()=>setTimeout(()=>show.classList.add('loaded'),150));
+const bots=$$('[data-d]',show);
+const par=(x,y)=>bots.forEach(b=>{const d=+b.dataset.d;b.style.transform=`translate(${x*d}px,${y*d}px)`});
+if(!reduce){if(fine)addEventListener('pointermove',e=>{if(scrollY<innerHeight)par(e.clientX/innerWidth-.5,e.clientY/innerHeight-.5)});
+  addEventListener('scroll',()=>{if(!fine&&scrollY<innerHeight)par(0,-scrollY/innerHeight*1.4)},{passive:true})}
+
+/* nav */
+const nav=$('#nav');addEventListener('scroll',()=>{nav.classList.toggle('solid',scrollY>30);const pxs=$$('.edit .px');if(pxs.length&&!reduce){const r=pxs[0].parentElement.getBoundingClientRect();pxs.forEach(i=>i.style.transform=`translateY(${(r.top/innerHeight)*-60}px)`)}},{passive:true});
+
+/* fotos de regalo: cambian solas */
+{const ims=$$('.edit .px'),dots=$$('.ph-dots i');let k=0;if(ims.length>1&&!reduce)setInterval(()=>{ims[k].classList.remove('on');dots[k].classList.remove('on');k=(k+1)%ims.length;ims[k].classList.add('on');dots[k].classList.add('on')},5000)}
+/* ============ catálogo ============ */
+let filtro='all',orden='d',busq='';const sel={};
+PRODUCTOS.forEach(p=>sel[p.id]=0);
+const grid=$('#grid');
+const vers=p=>PRODUCTOS.filter(x=>x.line===p.line);
+const cardIn=p=>`
+  <div class="ph" data-open>${VIDEOS[p.id]?`<button class="vbadge" data-vid="${p.id}" aria-label="Ver comercial de ${p.nombre}"><svg><use href="#i-play"/></svg>Ver comercial</button>`:''}${p.flag?`<span class="flag${p.flag==='Más vendido'?' g':''}">${p.flag}</span>`:''}
+   <img src="${pimg(p)}" alt="${p.nombre}" loading="lazy" width="800" height="1000">
+   <div class="notes">${p.notas.s.split(', ').slice(0,3).map(n=>`<span>${n}</span>`).join('')}</div></div>
+  <div class="info"><span class="br">Inspirado en</span><h3 data-open>${LINEAS[p.li].nombre}</h3><span class="kno">${p.nombre} · ${p.ref}</span>
+   ${vers(p).length>1?`<div class="vers" role="group" aria-label="Versión">${vers(p).map(x=>`<button data-ver="${x.id}" aria-pressed="${x.id===p.id}">${x.vname}</button>`).join('')}</div>`:''}
+   <span class="meta">${p.tipo} · ${p.fam}</span>
+   <div class="sizes">${p.tam.map((t,j)=>`<button data-sz="${j}" aria-pressed="${j===(sel[p.id]||0)}">${t[0]} ml</button>`).join('')}</div>
+   <div class="row"><span class="price" data-pr>${money(p.tam[sel[p.id]||0][1])}</span>
+    <button class="add" data-add aria-label="Agregar ${p.nombre} al carrito"><svg><use href="#i-plus"/></svg><span class="lbl">Agregar</span></button></div></div>`;
+const tg=t=>grid.querySelector(`.tier[data-t="${t}"] .grid`);
+LDEF.forEach((p,i)=>tg(p.tier).insertAdjacentHTML('beforeend',`<article class="pc rv" data-id="${p.id}" style="--tint:${p.tint};transition-delay:${(i%4)*.08}s">${cardIn(p)}</article>`));
+observe();
+const cards=$$('.pc',grid);
+function apply(){
+  let vis=0;const q=busq.toLowerCase();
+  const arr=cards.slice().sort((a,b)=>{const A=byId[a.dataset.id],B=byId[b.dataset.id];if(orden==='d')return A.li-B.li;const pa=A.tam[sel[A.id]][1],pb=B.tam[sel[B.id]][1];return orden==='lo'?pa-pb:pb-pa});
+  arr.forEach(c=>{tg(byId[c.dataset.id].tier).appendChild(c);const p=byId[c.dataset.id];const ok=(filtro==='all'||p.g===filtro)&&(!q||(p.marca+' '+vers(p).map(x=>x.nombre).join(' ')+' '+p.fam).toLowerCase().includes(q));c.classList.toggle('hide',!ok);if(ok){vis++;c.classList.add('in')}});
+  $$('.tier',grid).forEach(t=>t.style.display=t.querySelector('.pc:not(.hide)')?'':'none');
+  $('#empty').classList.toggle('on',!vis);
+}
+const seg=$('#seg'),pill=$('.pill',seg);
+const movePill=()=>{const b=$('[aria-pressed=true]',seg);pill.style.left=b.offsetLeft+'px';pill.style.width=b.offsetWidth+'px'};
+const setF=f=>{filtro=f;$$('button',seg).forEach(b=>b.setAttribute('aria-pressed',b.dataset.f===f));movePill();apply()};
+seg.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setF(b.dataset.f)});
+$$('[data-go]').forEach(a=>a.addEventListener('click',()=>setF(a.dataset.go)));
+addEventListener('resize',movePill);document.fonts&&document.fonts.ready.then(movePill);movePill();
+$('#q').addEventListener('input',e=>{busq=e.target.value.trim();apply()});
+$('#sort').addEventListener('change',e=>{orden=e.target.value;apply()});
+$('#goSearch').addEventListener('click',()=>setTimeout(()=>$('#q').focus({preventScroll:true}),600));
+
+grid.addEventListener('click',e=>{
+  const c=e.target.closest('.pc');if(!c)return;const p=byId[c.dataset.id];
+  const sz=e.target.closest('[data-sz]');
+  if(sz){sel[p.id]=+sz.dataset.sz;$$('[data-sz]',c).forEach(b=>b.setAttribute('aria-pressed',b===sz));const pr=$('[data-pr]',c);pr.textContent=money(p.tam[sel[p.id]][1]);pr.animate([{opacity:.2,transform:'translateY(6px)'},{opacity:1,transform:'none'}],{duration:350,easing:'ease-out'});return}
+  const vb=e.target.closest('[data-vid]');if(vb){openVideo(vb.dataset.vid);return}
+  const vr=e.target.closest('[data-ver]');if(vr){const np=byId[vr.dataset.ver];c.dataset.id=np.id;c.innerHTML=cardIn(np);c.querySelector('.ph img').animate([{opacity:0,transform:'translateY(14px) scale(.96)'},{opacity:1,transform:'none'}],{duration:500,easing:'cubic-bezier(.2,.8,.2,1)'});return}
+  const add=e.target.closest('[data-add]');
+  if(add){addToCart(p.id,sel[p.id],1,$('img',c));add.classList.add('ok');add.innerHTML='<svg><use href="#i-chk"/></svg><span class="lbl">Listo</span>';setTimeout(()=>{add.classList.remove('ok');add.innerHTML='<svg><use href="#i-plus"/></svg><span class="lbl">Agregar</span>'},1400);return}
+  if(e.target.closest('[data-open]'))openModal(p.id);
+});
+
+/* ============ carrito ============ */
+let cart=store.get('krypto_cart',[]).filter(i=>byId[i.id]&&byId[i.id].tam[i.s]);
+let entrega=store.get('krypto_entrega','recoger');
+const form={nombre:'',dir:'',nota:'',regalo:false};
+const badge=$('#badge'),fab=$('#fabcart');
+const count=()=>cart.reduce((a,i)=>a+i.q,0);
+const total=()=>cart.reduce((a,i)=>a+byId[i.id].tam[i.s][1]*i.q,0);
+function save(){store.set('krypto_cart',cart)}
+function addToCart(id,s,q,imgEl){
+  const f=cart.find(i=>i.id===id&&i.s===s);if(f)f.q+=q;else cart.push({id,s,q});save();
+  if(imgEl&&!reduce)fly(imgEl);else bump();
+  renderCart();const p=byId[id];toast(`${p.nombre} ${p.tam[s][0]} ml agregado`,`${pimg(p)}`);
+}
+function bump(){badge.classList.remove('pop');void badge.offsetWidth;badge.classList.add('pop')}
+function fly(img){
+  const r=img.getBoundingClientRect(),t=$('#cartBtn').getBoundingClientRect();
+  const el=img.cloneNode();el.className='fly';Object.assign(el.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});document.body.appendChild(el);
+  requestAnimationFrame(()=>{const dx=t.left+t.width/2-(r.left+r.width/2),dy=t.top+t.height/2-(r.top+r.height/2);el.style.transform=`translate(${dx}px,${dy}px) scale(.12) rotate(20deg)`;el.style.opacity='.4'});
+  setTimeout(()=>{el.remove();bump()},800);
+}
+function renderCart(){
+  const n=count();badge.textContent=n;badge.classList.toggle('on',n>0);
+  fab.classList.toggle('on',n>0);$('#fabtxt').textContent=`Ver carrito · ${money(total())}`;
+  $('#dcount').textContent=n?`(${n})`:'';
+  const body=$('#dbody');
+  if(!cart.length){body.innerHTML=`<div class="dempty"><svg><use href="#i-bag"/></svg><div class="ser">Tu carrito está vacío</div><p>Explora la colección y agrega tu aroma favorito.</p><button class="btn btn-amber" data-close>Ver perfumes</button></div>`;$('#send').disabled=true;$('#total').textContent='$0';return}
+  body.innerHTML=cart.map((i,k)=>{const p=byId[i.id],t=p.tam[i.s];return `<div class="ci" data-k="${k}" style="--tint:${p.tint}"><img src="${pimg(p)}" alt=""><div class="m"><span class="br">Inspirado en ${p.ref}</span><h4>${p.nombre}</h4><span class="s">${t[0]} ml · ${money(t[1])} c/u</span>
+    <div class="ctl"><div class="qty"><button data-q="-1" aria-label="Quitar uno">−</button><span>${i.q}</span><button data-q="1" aria-label="Agregar uno">+</button></div><span class="p">${money(t[1]*i.q)}</span></div><button class="rm" data-rm>Eliminar</button></div></div>`}).join('')+
+   `<div class="form">
+     <label>Tu nombre<input type="text" id="fn" placeholder="¿A nombre de quién?" value="${esc(form.nombre)}" autocomplete="name"></label>
+     <label>¿Cómo lo quieres recibir?<div class="seg2" id="ent"><button data-e="recoger" aria-pressed="${entrega==='recoger'}">Paso a recogerlo</button><button data-e="envio" aria-pressed="${entrega==='envio'}">Envío a domicilio</button></div></label>
+     ${entrega==='envio'?`<label>Dirección o colonia<input type="text" id="fd" placeholder="Calle, número y colonia" value="${esc(form.dir)}" autocomplete="street-address"></label>`:''}
+     <label class="gift"><input type="checkbox" id="fg" ${form.regalo?'checked':''}>🎁 Envolver para regalo</label>
+     <label>Nota (opcional)<textarea id="fo" rows="2" placeholder="Ej. mensaje para la tarjeta">${esc(form.nota)}</textarea></label>
+   </div>`;
+  $('#total').textContent=money(total());$('#send').disabled=false;
+}
+const esc=s=>String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const dbody=$('#dbody');
+dbody.addEventListener('click',e=>{
+  if(e.target.closest('[data-close]')){closeCart();location.hash='#tienda';return}
+  const en=e.target.closest('[data-e]');if(en){entrega=en.dataset.e;store.set('krypto_entrega',entrega);renderCart();return}
+  const row=e.target.closest('.ci');if(!row)return;const k=+row.dataset.k;
+  const q=e.target.closest('[data-q]');if(q){cart[k].q+=+q.dataset.q;if(cart[k].q<1)cart.splice(k,1);save();renderCart();return}
+  if(e.target.closest('[data-rm]')){row.animate([{opacity:1},{opacity:0,transform:'translateX(40px)'}],{duration:250}).onfinish=()=>{cart.splice(k,1);save();renderCart()}}
+});
+dbody.addEventListener('input',e=>{if(e.target.id==='fn')form.nombre=e.target.value;if(e.target.id==='fd')form.dir=e.target.value;if(e.target.id==='fo')form.nota=e.target.value;if(e.target.id==='fg')form.regalo=e.target.checked});
+dbody.addEventListener('change',e=>{if(e.target.id==='fg')form.regalo=e.target.checked});
+$('#send').addEventListener('click',()=>{
+  if(!cart.length)return;
+  const lines=cart.map(i=>{const p=byId[i.id],t=p.tam[i.s];return `• ${i.q} × ${p.nombre} (inspirado en ${p.ref}) ${t[0]} ml — ${money(t[1]*i.q)}`});
+  let msg=`Hola ${CONFIG.tienda}, quiero hacer este pedido:\n\n${lines.join('\n')}\n\n*Total: ${money(total())}*\n`;
+  if(form.nombre.trim())msg+=`\nNombre: ${form.nombre.trim()}`;
+  msg+=`\nEntrega: ${entrega==='envio'?'Envío a domicilio':'Paso a recogerlo'}`;
+  if(entrega==='envio'&&form.dir.trim())msg+=`\nDirección: ${form.dir.trim()}`;
+  if(form.regalo)msg+=`\n🎁 Envolver para regalo`;
+  if(form.nota.trim())msg+=`\nNota: ${form.nota.trim()}`;
+  msg+=`\n\n¿Me confirman disponibilidad y forma de pago?`;
+  window.open(wa(msg),'_blank','noopener');
+});
+const drawer=$('#drawer'),scrim=$('#scrim'),toastEl=$('#toast');
+function openCart(){closeModal();toastEl.classList.remove('on');renderCart();drawer.classList.add('on');scrim.classList.add('on');drawer.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';setTimeout(()=>$('#dclose').focus(),300)}
+function closeCart(){drawer.classList.remove('on');scrim.classList.remove('on');drawer.setAttribute('aria-hidden','true');document.body.style.overflow=''}
+$('#cartBtn').addEventListener('click',openCart);fab.addEventListener('click',openCart);$('#dclose').addEventListener('click',closeCart);scrim.addEventListener('click',closeCart);
+addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeModal()}});
+renderCart();
+
+/* toast */
+let tt;
+function toast(t,img){$('#ttxt').textContent=t;$('img',toastEl).src=img;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('on'),2800)}
+$('#tgo').addEventListener('click',()=>{toastEl.classList.remove('on');openCart()});
+
+/* ============ modal ============ */
+const modal=$('#modal'),mcard=$('#mcard'),mscrim=$('#mscrim');let mid=null,ms=0;
+function openModal(id){
+  const p=byId[id];mid=id;ms=sel[id]||0;
+  mcard.style.setProperty('--tint',p.tint);
+  mcard.innerHTML=`<div class="mimg"><button class="mx" id="mx" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button><img src="${pimg(p)}" alt="${p.nombre}"></div>
+   <div class="minfo"><span class="br">Inspirado en ${p.ref}</span><h3>${p.nombre}</h3><p class="meta">${p.tipo} · ${p.fam} · ${p.g==='h'?'Para él':'Para ella'}</p>${vers(p).length>1?`<div class="vers mv" id="mver">${vers(p).map(x=>`<button data-ver="${x.id}" aria-pressed="${x.id===p.id}">${x.vname}</button>`).join('')}</div>`:''}<p class="desc">${p.desc}</p>${VIDEOS[p.id]?`<button class="mvid" data-mvid="${p.id}"><svg><use href="#i-play"/></svg>Ver el comercial oficial</button>`:''}
+    <div class="pyr"><div><b>Salida</b><span>${p.notas.s}</span></div><div><b>Corazón</b><span>${p.notas.c}</span></div><div><b>Fondo</b><span>${p.notas.f}</span></div></div>
+    <div class="sizes" id="msz">${p.tam.map((t,j)=>`<button data-sz="${j}" aria-pressed="${j===ms}">${t[0]} ml</button>`).join('')}</div>
+    <div class="mrow"><span class="price" id="mpr">${money(p.tam[ms][1])}</span><button class="btn btn-amber" id="madd"><svg><use href="#i-bag"/></svg>Agregar al carrito</button></div></div>`;
+  modal.classList.add('on');mscrim.classList.add('on');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  $('#mx').onclick=closeModal;
+  const mvr=$('#mver');if(mvr)mvr.onclick=e=>{const b=e.target.closest('[data-ver]');if(b)openModal(b.dataset.ver)};
+  const mv=$('[data-mvid]',mcard);if(mv)mv.onclick=()=>{closeModal();openVideo(id)};
+  $('#msz').onclick=e=>{const b=e.target.closest('[data-sz]');if(!b)return;ms=+b.dataset.sz;$$('#msz button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#mpr').textContent=money(p.tam[ms][1])};
+  $('#madd').onclick=()=>{addToCart(id,ms,1,$('.mimg img',mcard));setTimeout(closeModal,250)};
+}
+function closeModal(){if(!modal.classList.contains('on'))return;modal.classList.remove('on');mscrim.classList.remove('on');modal.setAttribute('aria-hidden','true');if(!drawer.classList.contains('on'))document.body.style.overflow=''}
+mscrim.addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+
+
+const emb=v=>`https://www.youtube-nocookie.com/embed/${v.yt}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+/* video modal (desde tarjeta o ficha) */
+const vm=$('#vmodal'),vslot=$('#vslot');
+function openVideo(id){const v=VIDEOS[id],p=byId[id];vslot.innerHTML=`<iframe src="${emb(v)}" title="Comercial oficial de ${p.nombre}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;vm.classList.add('on');vm.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeVideo(){if(bgPlayer)try{bgPlayer.playVideo()}catch(_){};vm.classList.remove('on');vm.setAttribute('aria-hidden','true');vslot.innerHTML='';if(!drawer.classList.contains('on')&&!modal.classList.contains('on'))document.body.style.overflow=''}
+$('#vclose').addEventListener('click',closeVideo);vm.addEventListener('click',e=>{if(e.target===vm)closeVideo()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+
+/* ============ quiz ============ */
+const qbox=$('#qbox'),ans=[];
+qbox.addEventListener('click',e=>{
+  const o=e.target.closest('.opt');
+  if(o){const s=+o.closest('.qstep').dataset.s;ans[s]=o.dataset.v;go(s+1);return}
+  if(e.target.closest('#qreset')){if(bgPlayer){try{bgPlayer.destroy()}catch(_){}bgPlayer=null}ans.length=0;$('#aroma').classList.remove('done');$('#reveal').innerHTML='';go(0);return}
+  const pt=e.target.closest('[data-panel]');if(pt){const rvx=$('#reveal'),o=rvx.classList.toggle('panel');pt.setAttribute('aria-expanded',o);pt.setAttribute('aria-label',o?'Cerrar detalles':'Ver perfume');return}
+  const rz=e.target.closest('[data-rsz]');if(rz){$$('#rpsz button').forEach(b=>b.setAttribute('aria-pressed',b===rz));const pid=$('[data-radd]').dataset.radd;$('#rppr').textContent=money(byId[pid].tam[+rz.dataset.rsz][1]);return}
+  const ra=e.target.closest('[data-radd]');if(ra){const pz=$('#rpsz [aria-pressed=true]');addToCart(ra.dataset.radd,pz?+pz.dataset.rsz:0,1,$('.rp-img img'));return}
+  const rs=e.target.closest('[data-qshow]');if(rs&&!e.target.closest('[data-qadd]')){showReveal(+rs.dataset.qshow,false);$('#reveal').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});return}
+  const qv=e.target.closest('[data-qvid]');if(qv){if(bgPlayer)try{bgPlayer.pauseVideo()}catch(_){};openVideo(qv.dataset.qvid);return}
+  const qi=e.target.closest('[data-qinfo]');if(qi){openModal(qi.dataset.qinfo);return}
+  const a=e.target.closest('[data-qadd]');if(a){const p=byId[a.dataset.qadd];const box=a.closest('.rc')||a.closest('.reveal');addToCart(p.id,0,1,box.querySelector('.rcimg img, .rp-img img, img'))}
+});
+function go(n){
+  $$('.qstep',qbox).forEach(s=>s.classList.toggle('on',+s.dataset.s===n));
+  $$('.qprog i',qbox).forEach((b,i)=>b.classList.toggle('on',i<=Math.min(n,2)));
+  if(n===3)results();
+}
+let qList=[];
+function results(){
+  const [quien,cuando,tipo]=ans;
+  const sc=LDEF.map(p=>{let s=0;if(quien==='h'||quien==='m'){if(p.g!==quien)s-=100}
+    if(p.tags.includes(tipo))s+=5;if(p.tags.includes(cuando))s+=3;if(cuando==='siempre'&&p.tags.includes('dia'))s+=1;if(p.flag==='Más vendido')s+=1;if(VIDEOS[p.id])s+=1.5;return {p,s}})
+   .sort((a,b)=>b.s-a.s).slice(0,4);
+  const max=sc[0].s||1;
+  qList=sc.map(({p,s},i)=>({p,pct:Math.max(72,Math.round(98-i*7-(max-s)))}));
+  $('#aroma').classList.add('done');
+  showReveal(0,true);
+  $('#aroma').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+}
+function showReveal(k,first){
+  const {p:top,pct}=qList[k],v=VIDEOS[top.id];
+  const rv=$('#reveal');rv.classList.remove('go','panel');
+  if(bgPlayer){try{bgPlayer.destroy()}catch(_){}bgPlayer=null}
+  rv.innerHTML=`<div class="rv-photo" style="background-image:url(img/modelo-${(k%3)+1}.jpg)"></div><div class="rv-glow"></div>${v?`<div class="rv-vid" id="rvvid"><div id="ytbg"></div></div>`:''}
+    <button class="rv-tab" data-panel aria-expanded="false" aria-controls="rvpanel"><img src="${pimg(top)}" alt=""><span><small>Krypto</small>Ver perfume</span><svg><use href="#i-chev"/></svg></button>
+    <aside class="rv-panel" id="rvpanel" aria-label="Detalles de ${top.nombre}">
+      <div class="rp-img"><img src="${pimg(top)}" alt="${top.nombre}"></div>
+      <div class="rp-info"><span class="br">Inspirado en ${top.ref}</span><h4>${top.nombre}</h4><p class="rp-meta">${top.tipo} · ${top.fam}</p>
+        <div class="pyr"><div><b>Salida</b><span>${top.notas.s}</span></div><div><b>Corazón</b><span>${top.notas.c}</span></div><div><b>Fondo</b><span>${top.notas.f}</span></div></div>
+        <div class="sizes" id="rpsz">${top.tam.map((t,j)=>`<button data-rsz="${j}" aria-pressed="${j===0}">${t[0]} ml</button>`).join('')}</div>
+        <div class="rp-buy"><span class="price" id="rppr">${money(top.tam[0][1])}</span><button class="btn btn-amber" data-radd="${top.id}"><svg><use href="#i-bag"/></svg>Agregar</button></div></div>
+    </aside>
+    <div class="rv-txt"><span class="k">${k===0?'Tu aroma ideal':'También para ti'} <b>${pct}% compatible</b></span><span class="br">Inspirado en ${top.ref}</span><h3>${top.nombre}</h3><p>${top.desc} ${top.fam}.</p>
+      <div class="acts"><button class="btn btn-amber" data-qadd="${top.id}"><svg><use href="#i-bag"/></svg>Agregar · ${money(top.tam[0][1])}</button>${v?`<button class="btn btn-line" data-qvid="${top.id}"><svg><use href="#i-play"/></svg>Ver comercial con sonido</button>`:`<button class="btn btn-line" data-qinfo="${top.id}">Ver notas</button>`}</div></div>
+    <div class="curtain"><div class="seek"><img class="orb" src="img/krypto-logo.png" alt=""><p>${first?'Buscando tu aroma':'Cargando'}<i>…</i></p></div></div>`;
+  $('#res').innerHTML=qList.map((x,i)=>i===k?'':`<div class="rc" data-qshow="${i}" role="button" tabindex="0" aria-label="Ver ${x.p.nombre}"><span class="rcimg"><img src="${pimg(x.p)}" alt="">${VIDEOS[x.p.id]?'<i class="rcplay"><svg><use href="#i-play"/></svg></i>':''}</span><div><span class="match">${x.pct}% compatible</span><span class="br" style="display:block">Inspirado en ${x.p.ref}</span><h4>${x.p.nombre}</h4><p>${VIDEOS[x.p.id]?'▶ Toca para ver su comercial':x.p.fam} · desde ${money(x.p.tam[0][1])}</p></div><button class="add" data-qadd="${x.p.id}" aria-label="Agregar ${x.p.nombre}"><svg><use href="#i-plus"/></svg></button></div>`).join('');
+  setTimeout(()=>rv.classList.add('go'),reduce?0:(first?1700:350));
+  if(v)bgVideo(v.yt);
+}
+/* video de fondo: solo se muestra cuando YA está reproduciendo (sin controles visibles) */
+let ytReady=null,bgPlayer=null;
+function loadYT(){if(ytReady)return ytReady;ytReady=new Promise(res=>{if(window.YT&&YT.Player)return res();window.onYouTubeIframeAPIReady=res;const t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';t.onerror=()=>{};document.head.appendChild(t)});return ytReady}
+function bgVideo(id){
+  if(bgPlayer){try{bgPlayer.destroy()}catch(_){}bgPlayer=null}
+  loadYT().then(()=>{const el=$('#ytbg');if(!el)return;
+    bgPlayer=new YT.Player(el,{videoId:id,host:'https://www.youtube-nocookie.com',playerVars:{autoplay:1,mute:1,controls:0,modestbranding:1,playsinline:1,rel:0,iv_load_policy:3,disablekb:1,fs:0},
+      events:{onReady:e=>{e.target.mute();e.target.playVideo()},
+        onStateChange:e=>{const box=$('#rvvid');if(!box)return;if(e.data===0){e.target.seekTo(0);e.target.playVideo()}if(e.data===1){clearTimeout(box._t);box._t=setTimeout(()=>box.classList.add('live'),fine?1600:2800)}else if(e.data===3||e.data===-1){clearTimeout(box._t);box.classList.remove('live')}}}});
+    const ifr=$('#rvvid iframe');if(ifr){ifr.setAttribute('tabindex','-1');ifr.setAttribute('title','Comercial de fondo')}
+  });
+}
+})();
+</script>
+</body>
+</html>

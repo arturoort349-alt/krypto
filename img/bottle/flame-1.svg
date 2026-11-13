@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+<defs>
+<linearGradient id="liq" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1f8d8f"/><stop offset="1" stop-color="#08393b"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".12" stop-color="#fff" stop-opacity=".05"/><stop offset=".85" stop-color="#fff" stop-opacity=".02"/><stop offset="1" stop-color="#fff" stop-opacity=".3"/></linearGradient>
+<linearGradient id="cap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2a2a30"/><stop offset=".3" stop-color="#f4f4f8"/><stop offset=".5" stop-color="#8d8d96"/><stop offset=".72" stop-color="#e6e6ec"/><stop offset="1" stop-color="#3a3a42"/></linearGradient>
+<radialGradient id="shadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".55"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="400" cy="925" rx="230" ry="26" fill="url(#shadow)"/>
+<rect x="335" y="150" width="130" height="160" rx="14" fill="url(#cap)"/>
+<rect x="355" y="300" width="90" height="40" fill="#1c1c22"/>
+<path d="M215 380 L585 380 Q605 380 605 400 L605 890 Q605 910 585 910 L215 910 Q195 910 195 890 L195 400 Q195 380 215 380 Z" fill="url(#liq)"/>
+<path d="M215 380 L585 380 Q605 380 605 400 L605 890 Q605 910 585 910 L215 910 Q195 910 195 890 L195 400 Q195 380 215 380 Z" fill="url(#glass)" stroke="rgba(255,255,255,.45)" stroke-width="3"/>
+<path d="M300 420 L310 820" stroke="#fff" stroke-opacity=".35" stroke-width="16" stroke-linecap="round"/>
+<rect x="300" y="560" width="200" height="130" rx="8" fill="rgba(8,8,10,.82)" stroke="url(#cap)" stroke-width="3"/>
+<text x="400" y="612" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="8" fill="#f2f2f5">KRYPTO</text>
+<text x="400" y="660" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="300" letter-spacing="4" fill="#c9c9d2">Nº 10</text>
+</svg>
