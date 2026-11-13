@@ -826,7 +826,7 @@ const PRECIO={e:899,s:979,b:1125};
 const PRODUCTOS=[],VIDEOS={};
 LINEAS.forEach((L,li)=>L.vers.forEach((v,vi)=>{
   const id=L.id+(vi?'-'+vi:'');const base=v.nombre||L.nombre;
-  const p={...L,id,li,vi,line:L.id,vname:v.n,ref:L.marca+' '+base+(v.full?' '+v.full:''),nombre:'Krypto Nº '+String(PRODUCTOS.length+1).padStart(2,'0'),tipo:v.tipo,tam:v.tam.map(t=>[t[0],PRECIO[L.tier]]),img:'marca/'+id,flag:vi?(v.flag||''):L.flag,desc:v.desc||L.desc};
+  const p={...L,id,li,vi,line:L.id,vname:v.n,ref:L.marca+' '+base+(v.full?' '+v.full:''),nombre:base+(v.full?' '+v.full:''),tipo:v.tipo,tam:v.tam.map(t=>[t[0],PRECIO[L.tier]]),img:'marca/'+id,flag:vi?(v.flag||''):L.flag,desc:v.desc||L.desc};
   delete p.vers;delete p.yt;delete p.t;delete p.thumb;PRODUCTOS.push(p);
 }));
 const LDEF=PRODUCTOS.filter(p=>p.vi===0);
@@ -873,7 +873,7 @@ const cardIn=p=>`
   <div class="ph" data-open>${VIDEOS[p.id]?`<button class="vbadge" data-vid="${p.id}" aria-label="Ver comercial de ${p.nombre}"><svg><use href="#i-play"/></svg>Ver comercial</button>`:''}${p.flag?`<span class="flag${p.flag==='Más vendido'?' g':''}">${p.flag}</span>`:''}
    <img src="${pimg(p)}" alt="${p.nombre}" loading="lazy" width="800" height="1000">
    <div class="notes">${p.notas.s.split(', ').slice(0,3).map(n=>`<span>${n}</span>`).join('')}</div></div>
-  <div class="info"><span class="br">Inspirado en</span><h3 data-open>${LINEAS[p.li].nombre}</h3><span class="kno">${p.nombre} · ${p.ref}</span>
+  <div class="info"><span class="br">Inspirado en</span><h3 data-open>${LINEAS[p.li].nombre}</h3><span class="kno">${p.marca}${p.vi?" · "+p.vname:""}</span>
    ${vers(p).length>1?`<div class="vers" role="group" aria-label="Versión">${vers(p).map(x=>`<button data-ver="${x.id}" aria-pressed="${x.id===p.id}">${x.vname}</button>`).join('')}</div>`:''}
    <span class="meta">${p.tipo} · ${p.fam}</span>
    <div class="sizes">${p.tam.map((t,j)=>`<button data-sz="${j}" aria-pressed="${j===(sel[p.id]||0)}">${t[0]} ml</button>`).join('')}</div>
@@ -937,7 +937,7 @@ function renderCart(){
   $('#dcount').textContent=n?`(${n})`:'';
   const body=$('#dbody');
   if(!cart.length){body.innerHTML=`<div class="dempty"><svg><use href="#i-bag"/></svg><div class="ser">Tu carrito está vacío</div><p>Explora la colección y agrega tu aroma favorito.</p><button class="btn btn-amber" data-close>Ver perfumes</button></div>`;$('#send').disabled=true;$('#total').textContent='$0';return}
-  body.innerHTML=cart.map((i,k)=>{const p=byId[i.id],t=p.tam[i.s];return `<div class="ci" data-k="${k}" style="--tint:${p.tint}"><img src="${pimg(p)}" alt=""><div class="m"><span class="br">Inspirado en ${p.ref}</span><h4>${p.nombre}</h4><span class="s">${t[0]} ml · ${money(t[1])} c/u</span>
+  body.innerHTML=cart.map((i,k)=>{const p=byId[i.id],t=p.tam[i.s];return `<div class="ci" data-k="${k}" style="--tint:${p.tint}"><img src="${pimg(p)}" alt=""><div class="m"><span class="br">Inspirado en ${p.marca}</span><h4>${p.nombre}</h4><span class="s">${t[0]} ml · ${money(t[1])} c/u</span>
     <div class="ctl"><div class="qty"><button data-q="-1" aria-label="Quitar uno">−</button><span>${i.q}</span><button data-q="1" aria-label="Agregar uno">+</button></div><span class="p">${money(t[1]*i.q)}</span></div><button class="rm" data-rm>Eliminar</button></div></div>`}).join('')+
    `<div class="form">
      <label>Tu nombre<input type="text" id="fn" placeholder="¿A nombre de quién?" value="${esc(form.nombre)}" autocomplete="name"></label>
@@ -961,7 +961,7 @@ dbody.addEventListener('input',e=>{if(e.target.id==='fn')form.nombre=e.target.va
 dbody.addEventListener('change',e=>{if(e.target.id==='fg')form.regalo=e.target.checked});
 $('#send').addEventListener('click',()=>{
   if(!cart.length)return;
-  const lines=cart.map(i=>{const p=byId[i.id],t=p.tam[i.s];return `• ${i.q} × ${p.nombre} (inspirado en ${p.ref}) ${t[0]} ml — ${money(t[1]*i.q)}`});
+  const lines=cart.map(i=>{const p=byId[i.id],t=p.tam[i.s];return `• ${i.q} × Inspirado en ${p.ref} ${t[0]} ml — ${money(t[1]*i.q)}`});
   let msg=`Hola ${CONFIG.tienda}, quiero hacer este pedido:\n\n${lines.join('\n')}\n\n*Total: ${money(total())}*\n`;
   if(form.nombre.trim())msg+=`\nNombre: ${form.nombre.trim()}`;
   msg+=`\nEntrega: ${entrega==='envio'?'Envío a domicilio':'Paso a recogerlo'}`;
@@ -989,7 +989,7 @@ function openModal(id){
   const p=byId[id];mid=id;ms=sel[id]||0;
   mcard.style.setProperty('--tint',p.tint);
   mcard.innerHTML=`<div class="mimg"><button class="mx" id="mx" aria-label="Cerrar"><svg><use href="#i-x"/></svg></button><img src="${pimg(p)}" alt="${p.nombre}"></div>
-   <div class="minfo"><span class="br">Inspirado en ${p.ref}</span><h3>${p.nombre}</h3><p class="meta">${p.tipo} · ${p.fam} · ${p.g==='h'?'Para él':'Para ella'}</p>${vers(p).length>1?`<div class="vers mv" id="mver">${vers(p).map(x=>`<button data-ver="${x.id}" aria-pressed="${x.id===p.id}">${x.vname}</button>`).join('')}</div>`:''}<p class="desc">${p.desc}</p>${VIDEOS[p.id]?`<button class="mvid" data-mvid="${p.id}"><svg><use href="#i-play"/></svg>Ver el comercial oficial</button>`:''}
+   <div class="minfo"><span class="br">Inspirado en ${p.marca}</span><h3>${p.nombre}</h3><p class="meta">${p.tipo} · ${p.fam} · ${p.g==='h'?'Para él':'Para ella'}</p>${vers(p).length>1?`<div class="vers mv" id="mver">${vers(p).map(x=>`<button data-ver="${x.id}" aria-pressed="${x.id===p.id}">${x.vname}</button>`).join('')}</div>`:''}<p class="desc">${p.desc}</p>${VIDEOS[p.id]?`<button class="mvid" data-mvid="${p.id}"><svg><use href="#i-play"/></svg>Ver el comercial oficial</button>`:''}
     <div class="pyr"><div><b>Salida</b><span>${p.notas.s}</span></div><div><b>Corazón</b><span>${p.notas.c}</span></div><div><b>Fondo</b><span>${p.notas.f}</span></div></div>
     <div class="sizes" id="msz">${p.tam.map((t,j)=>`<button data-sz="${j}" aria-pressed="${j===ms}">${t[0]} ml</button>`).join('')}</div>
     <div class="mrow"><span class="price" id="mpr">${money(p.tam[ms][1])}</span><button class="btn btn-amber" id="madd"><svg><use href="#i-bag"/></svg>Agregar al carrito</button></div></div>`;
@@ -1049,18 +1049,18 @@ function showReveal(k,first){
   const rv=$('#reveal');rv.classList.remove('go','panel');
   if(bgPlayer){try{bgPlayer.destroy()}catch(_){}bgPlayer=null}
   rv.innerHTML=`<div class="rv-photo" style="background-image:url(img/modelo-${(k%3)+1}.jpg)"></div><div class="rv-glow"></div>${v?`<div class="rv-vid" id="rvvid"><div id="ytbg"></div></div>`:''}
-    <button class="rv-tab" data-panel aria-expanded="false" aria-controls="rvpanel"><img src="${pimg(top)}" alt=""><span><small>Krypto</small>Ver perfume</span><svg><use href="#i-chev"/></svg></button>
+    <button class="rv-tab" data-panel aria-expanded="false" aria-controls="rvpanel"><img src="${pimg(top)}" alt=""><span><small>Inspirado en</small>Ver perfume</span><svg><use href="#i-chev"/></svg></button>
     <aside class="rv-panel" id="rvpanel" aria-label="Detalles de ${top.nombre}">
       <div class="rp-img"><img src="${pimg(top)}" alt="${top.nombre}"></div>
-      <div class="rp-info"><span class="br">Inspirado en ${top.ref}</span><h4>${top.nombre}</h4><p class="rp-meta">${top.tipo} · ${top.fam}</p>
+      <div class="rp-info"><span class="br">Inspirado en ${top.marca}</span><h4>${top.nombre}</h4><p class="rp-meta">${top.tipo} · ${top.fam}</p>
         <div class="pyr"><div><b>Salida</b><span>${top.notas.s}</span></div><div><b>Corazón</b><span>${top.notas.c}</span></div><div><b>Fondo</b><span>${top.notas.f}</span></div></div>
         <div class="sizes" id="rpsz">${top.tam.map((t,j)=>`<button data-rsz="${j}" aria-pressed="${j===0}">${t[0]} ml</button>`).join('')}</div>
         <div class="rp-buy"><span class="price" id="rppr">${money(top.tam[0][1])}</span><button class="btn btn-amber" data-radd="${top.id}"><svg><use href="#i-bag"/></svg>Agregar</button></div></div>
     </aside>
-    <div class="rv-txt"><span class="k">${k===0?'Tu aroma ideal':'También para ti'} <b>${pct}% compatible</b></span><span class="br">Inspirado en ${top.ref}</span><h3>${top.nombre}</h3><p>${top.desc} ${top.fam}.</p>
+    <div class="rv-txt"><span class="k">${k===0?'Tu aroma ideal':'También para ti'} <b>${pct}% compatible</b></span><span class="br">Inspirado en ${top.marca}</span><h3>${top.nombre}</h3><p>${top.desc} ${top.fam}.</p>
       <div class="acts"><button class="btn btn-amber" data-qadd="${top.id}"><svg><use href="#i-bag"/></svg>Agregar · ${money(top.tam[0][1])}</button>${v?`<button class="btn btn-line" data-qvid="${top.id}"><svg><use href="#i-play"/></svg>Ver comercial con sonido</button>`:`<button class="btn btn-line" data-qinfo="${top.id}">Ver notas</button>`}</div></div>
     <div class="curtain"><div class="seek"><img class="orb" src="img/krypto-logo.png" alt=""><p>${first?'Buscando tu aroma':'Cargando'}<i>…</i></p></div></div>`;
-  $('#res').innerHTML=qList.map((x,i)=>i===k?'':`<div class="rc" data-qshow="${i}" role="button" tabindex="0" aria-label="Ver ${x.p.nombre}"><span class="rcimg"><img src="${pimg(x.p)}" alt="">${VIDEOS[x.p.id]?'<i class="rcplay"><svg><use href="#i-play"/></svg></i>':''}</span><div><span class="match">${x.pct}% compatible</span><span class="br" style="display:block">Inspirado en ${x.p.ref}</span><h4>${x.p.nombre}</h4><p>${VIDEOS[x.p.id]?'▶ Toca para ver su comercial':x.p.fam} · desde ${money(x.p.tam[0][1])}</p></div><button class="add" data-qadd="${x.p.id}" aria-label="Agregar ${x.p.nombre}"><svg><use href="#i-plus"/></svg></button></div>`).join('');
+  $('#res').innerHTML=qList.map((x,i)=>i===k?'':`<div class="rc" data-qshow="${i}" role="button" tabindex="0" aria-label="Ver ${x.p.nombre}"><span class="rcimg"><img src="${pimg(x.p)}" alt="">${VIDEOS[x.p.id]?'<i class="rcplay"><svg><use href="#i-play"/></svg></i>':''}</span><div><span class="match">${x.pct}% compatible</span><span class="br" style="display:block">Inspirado en ${x.p.marca}</span><h4>${x.p.nombre}</h4><p>${VIDEOS[x.p.id]?'▶ Toca para ver su comercial':x.p.fam} · desde ${money(x.p.tam[0][1])}</p></div><button class="add" data-qadd="${x.p.id}" aria-label="Agregar ${x.p.nombre}"><svg><use href="#i-plus"/></svg></button></div>`).join('');
   setTimeout(()=>rv.classList.add('go'),reduce?0:(first?1700:350));
   if(v)bgVideo(v.yt);
 }
