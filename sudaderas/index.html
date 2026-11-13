@@ -51,16 +51,16 @@ button{font:inherit;color:inherit}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
   linear-gradient(180deg,rgba(6,6,7,.55) 0%,rgba(6,6,7,0) 28%,rgba(6,6,7,.15) 60%,var(--bg) 100%),
   radial-gradient(ellipse at 30% 50%,rgba(0,0,0,0) 0%,rgba(0,0,0,.45) 75%)}
-.hero .wrap{width:100%;display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:24px;padding-top:110px;padding-bottom:40px}
+.hero .wrap{width:100%;max-width:1400px;display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:24px;padding-top:110px;padding-bottom:40px}
 .logo3d{perspective:900px}
-.logo3d img{width:min(560px,100%);mix-blend-mode:screen;filter:drop-shadow(0 0 28px rgba(255,255,255,.18));transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;animation:float 7s ease-in-out infinite}
+.logo3d img{width:min(620px,100%);mix-blend-mode:screen;filter:drop-shadow(0 0 28px rgba(255,255,255,.18));transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;animation:float 7s ease-in-out infinite}
 @keyframes float{50%{translate:0 -12px}}
 .htext{justify-self:end;text-align:right;display:grid;gap:14px;justify-items:end}
 .kick{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--chrome);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:6px 14px}
-.htext h1{margin:0;font-family:"Pirata One","UnifrakturMaguntia",serif;font-weight:400;font-size:clamp(70px,12vw,184px);line-height:.85;letter-spacing:.01em;padding:0 .04em .06em;
+.htext h1{margin:0;font-family:"Pirata One","UnifrakturMaguntia",serif;font-weight:400;font-size:clamp(96px,17vw,270px);line-height:.82;letter-spacing:.01em;padding:0 .04em .06em;
   background:var(--chromegrad);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite;filter:drop-shadow(0 4px 18px rgba(0,0,0,.55))}
 @keyframes shine{to{background-position:-220% 0}}
-.htext p{margin:0;font-weight:600;font-size:clamp(13px,1.5vw,16px);letter-spacing:.32em;text-transform:uppercase;color:#dcdce2}
+.htext p{margin:0;font-weight:600;font-size:clamp(14px,1.8vw,21px);letter-spacing:.34em;text-transform:uppercase;color:#dcdce2}
 .cta{display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden;background:var(--fg);color:var(--bg);text-decoration:none;font-weight:700;border-radius:99px;padding:15px 24px;transition:transform .2s}
 .cta:hover{transform:translateY(-3px)}
 .cta::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.75) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.2s ease-in-out infinite}
@@ -178,6 +178,7 @@ footer img{width:70px;mix-blend-mode:screen}
   .esc{padding:7px 12px}
   .htext{justify-self:center;justify-items:center;text-align:center}
   .logo3d img{width:min(380px,86vw);margin:0 auto}
+  .htext h1{font-size:clamp(96px,30vw,170px)}
   .bar nav{display:none}
   .grid{grid-template-columns:1fr}
   .pasos{grid-template-columns:1fr}
