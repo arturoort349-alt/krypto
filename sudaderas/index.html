@@ -201,7 +201,7 @@ const fichas=document.getElementById("fichas");
 M.forEach(([n,c,f,b,t],i)=>{
   const k=pad(i+1), dot=`<span class="dot" style="background:${COLORES[c]}"></span>`;
   fichas.insertAdjacentHTML("beforeend",`<article class="ficha" data-color="${c}" style="animation-delay:${(i%4)*70}ms">
-    <button type="button" data-zoom data-src="img/p${k}.jpg" data-cap="${k} ${n} · ${c}"><img src="img/p${k}.jpg" alt="${n}: frente y espalda" loading="lazy"></button>
+    <button type="button" data-zoom data-src="img/p${k}.jpg?v=2" data-cap="${k} ${n} · ${c}"><img src="img/p${k}.jpg?v=2" alt="${n}: frente y espalda" loading="lazy"></button>
     <div><div class="color">${dot}${k} · ${c}</div><h3>${n}</h3><dl><dt>Frente</dt><dd>${f}</dd><dt>Espalda</dt><dd>${b}</dd></dl>
     <span class="chips">${t.map(x=>`<span class="chip">${x}</span>`).join("")}</span>
     <div class="buy"><label id="tl${i}">Talla</label>
@@ -248,7 +248,7 @@ function pintaCarrito(){
   const n=cart.reduce((a,x)=>a+x.q,0);
   document.getElementById("cartCount").textContent=n;
   const box=document.getElementById("items");
-  box.innerHTML=cart.length?cart.map((x,k)=>`<div class="it"><img src="img/p${pad(x.i+1)}.jpg" alt=""><div><b>${M[x.i][0]}</b><small>${M[x.i][1]} · Talla ${x.t}</small></div>
+  box.innerHTML=cart.length?cart.map((x,k)=>`<div class="it"><img src="img/p${pad(x.i+1)}.jpg?v=2" alt=""><div><b>${M[x.i][0]}</b><small>${M[x.i][1]} · Talla ${x.t}</small></div>
     <div class="qty"><button type="button" data-k="${k}" data-d="-1" aria-label="Quitar una">−</button><span>${x.q}</span><button type="button" data-k="${k}" data-d="1" aria-label="Agregar una">+</button></div></div>`).join("")
     :'<p class="vacio">Tu carrito está vacío. Elige una talla y toca "Agregar al carrito".</p>';
   const wa=document.getElementById("waLink");
