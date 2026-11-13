@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../img/favicon.png">
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Krypto Drop 01</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: catálogo en negro y cromo — portada, filtros por color, una ficha frente/espalda por sudadera, hoja de posiciones */
+:root{
+  --bg:#09090a; --panel:#141416; --line:#26262a; --fg:#ececee; --muted:#9b9ba3; --chrome:#d9d9de;
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto}
+
+header{position:relative;display:grid;justify-items:center;text-align:center;gap:10px;padding-block:48px 24px}
+header::before{content:"";position:absolute;inset:0 -20%;background:radial-gradient(ellipse at 50% 35%,rgba(255,255,255,.08),transparent 60%);pointer-events:none}
+header img{width:min(360px,70vw);mix-blend-mode:screen;animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-8px) rotate(-1deg)}}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,7vw,64px);letter-spacing:-.02em;line-height:1;margin:0;
+  background:linear-gradient(100deg,#77777d 0%,#fafafa 22%,#a3a3a9 40%,#fff 55%,#7d7d83 75%,#e9e9ee 100%);background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.lead{color:var(--muted);max-width:60ch;margin:6px auto 0;text-wrap:balance}
+.tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--chrome);border:1px solid var(--line);border-radius:99px;padding:6px 14px}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px}
+nav a{color:var(--fg);text-decoration:none;font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:99px;padding:8px 16px;transition:background .2s,color .2s}
+nav a:hover,nav a:focus-visible{background:var(--fg);color:var(--bg);outline:none}
+
+section{padding-block:34px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(22px,4vw,34px);letter-spacing:-.01em;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 18px;max-width:65ch}
+
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.filtros button{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:13px;color:var(--fg);background:none;border:1px solid var(--line);border-radius:99px;padding:7px 14px;cursor:pointer;transition:all .2s}
+.filtros button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.filtros button:focus-visible{outline:2px solid var(--chrome);outline-offset:2px}
+.dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,.35);flex:none}
+
+.fichas{display:grid;gap:22px}
+.ficha{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:center;border-top:1px solid var(--line);padding-top:22px;animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{transform:translateY(14px)}}
+.ficha[hidden]{display:none}
+.ficha button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;display:block;width:100%}
+.ficha button:focus-visible{outline:2px solid var(--chrome);outline-offset:3px}
+.ficha img{width:100%;border-radius:10px;display:block;transition:transform .5s}
+@media (hover:hover){.ficha button:hover img{transform:scale(1.015)}}
+.ficha h3{font-family:var(--display);font-weight:800;font-size:22px;margin:0 0 4px}
+.ficha .color{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--chrome)}
+.ficha dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 12px;font-size:14px}
+.ficha dt{color:var(--muted)}
+.ficha dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:2px 8px;color:#c9c9cf}
+
+.pos button{padding:0;border:0;background:none;cursor:zoom-in;display:block;width:100%}
+.pos img{width:100%;border-radius:10px;display:block}
+.nota{color:var(--muted);font-size:13px;border:1px solid var(--line);border-radius:10px;padding:14px 16px;max-width:75ch}
+footer{color:var(--muted);font-size:12px;text-align:center;padding-block:30px 50px}
+
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.94);display:grid;grid-template-rows:1fr auto;place-items:center;z-index:20;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+#lb img{max-width:100%;max-height:82vh;border-radius:8px}
+#lb p{margin:10px 0 0;font-family:var(--display);font-size:14px}
+#lb .x{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px))}
+#lb .prev{position:absolute;left:calc(10px + env(safe-area-inset-left,0px));top:50%}
+#lb .next{position:absolute;right:calc(10px + env(safe-area-inset-right,0px));top:50%}
+#lb button{background:var(--fg);color:var(--bg);border:0;border-radius:99px;padding:9px 15px;font:inherit;font-weight:600;cursor:pointer}
+#lb button:focus-visible{outline:2px solid var(--chrome);outline-offset:2px}
+
+/* compra */
+.buy{display:grid;gap:10px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.buy label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tallas{display:flex;gap:6px;flex-wrap:wrap}
+.tallas button{min-width:44px;font:inherit;font-size:13px;font-weight:600;color:var(--fg);background:none;border:1px solid var(--line);border-radius:8px;padding:8px 10px;cursor:pointer}
+.tallas button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tallas button:focus-visible,.add:focus-visible,.cartbtn:focus-visible,.drawer button:focus-visible{outline:2px solid var(--chrome);outline-offset:2px}
+.precio{font-size:13px;color:var(--muted)}
+.add{font:inherit;font-weight:700;font-size:14px;color:var(--bg);background:var(--fg);border:0;border-radius:99px;padding:11px 18px;cursor:pointer;justify-self:start;transition:transform .15s}
+.add:active{transform:scale(.96)}
+.add.ok{background:#bfe8c6}
+.pasos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pasos div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
+.pasos b{display:block;font-family:var(--display);font-size:15px;margin:6px 0 4px}
+.pasos span{font-family:var(--display);font-size:12px;color:var(--chrome)}
+.pasos p{margin:0;font-size:14px;color:var(--muted)}
+.cartbtn{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:15;display:inline-flex;align-items:center;gap:8px;font:inherit;font-weight:700;color:var(--bg);background:var(--fg);border:0;border-radius:99px;padding:13px 18px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+.cartbtn .c{background:var(--bg);color:var(--fg);border-radius:99px;min-width:24px;padding:1px 7px;font-variant-numeric:tabular-nums}
+.cartbtn.bump{animation:bump .4s}
+@keyframes bump{40%{transform:scale(1.12)}}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(420px,100%);background:var(--panel);border-left:1px solid var(--line);z-index:25;display:grid;grid-template-rows:auto 1fr auto;
+  padding:calc(18px + env(safe-area-inset-top,0px)) max(18px,env(safe-area-inset-right,0px)) calc(18px + env(safe-area-inset-bottom,0px)) 18px}
+.drawer h2{font-size:22px;margin:0}
+.drawer .head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.drawer .items{overflow:auto;display:grid;align-content:start;gap:12px}
+.it{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px}
+.it img{width:64px;height:40px;object-fit:cover;border-radius:6px}
+.it b{font-family:var(--display);font-size:13px;display:block}
+.it small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:6px}
+.drawer button{font:inherit;color:var(--fg);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}
+.drawer .foot{display:grid;gap:10px;padding-top:14px}
+.drawer .wa{display:block;text-align:center;text-decoration:none;font-weight:700;color:#06210f;background:#5fd38a;border-radius:99px;padding:13px}
+.drawer .note{font-size:12px;color:var(--muted);margin:0}
+.drawer .vacio{color:var(--muted)}
+.velo{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:24}
+@media (max-width:820px){.pasos{grid-template-columns:1fr}}
+@media (max-width:720px){.ficha{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="tag">Colección · Drop 01</span>
+    <img src="img/logo.png" alt="Logo Krypto: anillo cromado con estrella de cuatro puntas">
+    <h1>KRYPTO</h1>
+    <p class="lead">Sudaderas oversize con nuestro logo, de frente y de espalda.</p>
+    <nav aria-label="Secciones">
+      <a href="#coleccion">Colección</a><a href="#pedir">Cómo pedir</a><a href="#posiciones">Posiciones del logo</a>
+    </nav>
+  </header>
+
+  <section id="coleccion">
+    <h2>Colección</h2>
+    <p class="sub">Toquen una imagen para verla en grande.</p>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por color"></div>
+    <div class="fichas" id="fichas"></div>
+  </section>
+
+  <section id="pedir">
+    <h2>Cómo pedir</h2>
+    <div class="pasos">
+      <div><span>Paso 1</span><b>Elige tu sudadera</b><p>Escoge la talla y agrégala al carrito. Puedes llevar varias.</p></div>
+      <div><span>Paso 2</span><b>Manda tu pedido</b><p>Abre el carrito y toca "Pedir por WhatsApp". El mensaje ya va escrito.</p></div>
+      <div><span>Paso 3</span><b>Te confirmamos</b><p>Te respondemos con el precio, el pago y la entrega.</p></div>
+    </div>
+  </section>
+
+  <section id="posiciones" class="pos">
+    <h2>Posiciones del logo</h2>
+    <p class="sub">Las letras son las mismas de la tabla del proveedor (A, B, C, D, E, F, H, M, N).</p>
+    <button type="button" data-zoom data-src="img/posiciones.jpg" data-cap="Posiciones del logo"><img src="img/posiciones.jpg" alt="Logo Krypto en las nueve posiciones del proveedor"></button>
+  </section>
+
+  <p class="nota">Las imágenes son simulaciones sobre las fotos del proveedor. El resultado final depende de la técnica y del proveedor.</p>
+  <footer>KRYPTO · Drop 01 · noviembre 2026</footer>
+</div>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Imagen en grande">
+  <img alt=""><p id="lbCap"></p>
+  <button type="button" class="x" id="lbClose">Cerrar</button>
+  <button type="button" class="prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <button type="button" class="next" id="lbNext" aria-label="Siguiente">›</button>
+</div>
+
+<button type="button" class="cartbtn" id="cartBtn" aria-label="Abrir carrito">Carrito <span class="c" id="cartCount">0</span></button>
+<div class="velo" id="velo" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Carrito">
+  <div class="head"><h2>Tu carrito</h2><button type="button" id="cartClose">Cerrar</button></div>
+  <div class="items" id="items"></div>
+  <div class="foot">
+    <a class="wa" id="waLink" href="#" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    <button type="button" id="copyOrder">Copiar pedido</button>
+    <p class="note">WhatsApp de Krypto: <span style="user-select:all">222 339 4256</span>. Si no se abre WhatsApp, copia el pedido y mándalo a ese número.</p>
+  </div>
+</aside>
+
+<script>
+const COLORES={"Negro":"#1c1c1e","Carbón":"#5f615e","Gris jaspe":"#d8d6d1","Blanco":"#f4f4f2","Azul rey":"#3d63c9"};
+const M=[
+ ["Orbit Full","Negro","Logo bordado en el pecho + firma abajo","Logo cromado grande + estrellita en la nuca",["Bordado","Cromo DTF"]],
+ ["Signature","Gris jaspe","Logo bordado en el pecho + etiqueta KRYPTO abajo","Estrellita en la nuca + firma en la espalda baja",["Bordado","Hule"]],
+ ["Night Shift","Carbón","Logo grande en relieve + firma blanca abajo","KRYPTO gótico en puff (relieve inflado)",["Relieve","Puff 3D"]],
+ ["Blue Star","Azul rey","Estrella bordada en el pecho + firma abajo","Logo blanco grande en serigrafía",["Bordado","Serigrafía"]],
+ ["Orbit Bordado","Gris jaspe","Logo chico bordado en el pecho","Lisa",["Bordado"]],
+ ["Gothic Puff","Negro","Logo bordado en el pecho","KRYPTO gótico en puff en los hombros",["Bordado","Puff 3D"]],
+ ["Silent","Carbón","KRYPTO en relieve del mismo color","Logo grande en relieve del mismo color",["Relieve"]],
+ ["Chrome","Negro","Logo cromado chico en el pecho","Logo cromado grande (impresión a todo color)",["Cromo DTF"]],
+ ["Ice","Negro","Logo chico de pedrería en el pecho","Logo grande de pedrería",["Pedrería"]],
+ ["Noche","Carbón","Logo que brilla en la oscuridad","KRYPTO que brilla en la oscuridad",["Luminoso"]],
+ ["Sport","Blanco","Logo + KRYPTO en hule negro","KRYPTO en hule negro abajo",["Hule"]],
+ ["Vintage Blue","Azul rey","KRYPTO graffiti con efecto gastado","Logo grande con efecto gastado",["Vintage"]]
+];
+const pad=n=>String(n).padStart(2,"0");
+const TALLAS=["S","M","L","XL"];
+const PRECIO=null; // precio por pieza en pesos; null = por confirmar
+const WA="522223394256";
+const precioTxt=()=>PRECIO?`$${PRECIO.toLocaleString("es-MX")} MXN`:"Precio por confirmar";
+const fichas=document.getElementById("fichas");
+M.forEach(([n,c,f,b,t],i)=>{
+  const k=pad(i+1), dot=`<span class="dot" style="background:${COLORES[c]}"></span>`;
+  fichas.insertAdjacentHTML("beforeend",`<article class="ficha" data-color="${c}" style="animation-delay:${(i%4)*70}ms">
+    <button type="button" data-zoom data-src="img/p${k}.jpg" data-cap="${k} ${n} · ${c}"><img src="img/p${k}.jpg" alt="${n}: frente y espalda" loading="lazy"></button>
+    <div><div class="color">${dot}${k} · ${c}</div><h3>${n}</h3><dl><dt>Frente</dt><dd>${f}</dd><dt>Espalda</dt><dd>${b}</dd></dl>
+    <span class="chips">${t.map(x=>`<span class="chip">${x}</span>`).join("")}</span>
+    <div class="buy"><label id="tl${i}">Talla</label>
+      <div class="tallas" role="group" aria-labelledby="tl${i}" data-i="${i}">${TALLAS.map((s,j)=>`<button type="button" data-t="${s}" aria-pressed="${j===1}">${s}</button>`).join("")}</div>
+      <span class="precio">${precioTxt()}</span>
+      <button type="button" class="add" data-i="${i}">Agregar al carrito</button></div>
+    </div></article>`);
+});
+
+const filtros=document.getElementById("filtros");
+["Todos",...Object.keys(COLORES)].forEach(c=>{
+  filtros.insertAdjacentHTML("beforeend",`<button type="button" data-c="${c}" aria-pressed="${c==="Todos"}">${c==="Todos"?"":`<span class="dot" style="background:${COLORES[c]}"></span>`}${c}</button>`);
+});
+filtros.addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  filtros.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  document.querySelectorAll(".ficha").forEach(f=>f.hidden=!(b.dataset.c==="Todos"||f.dataset.color===b.dataset.c));
+});
+
+const lb=document.getElementById("lb"), lbImg=lb.querySelector("img"), lbCap=document.getElementById("lbCap");
+let lista=[], pos=0;
+function show(){const it=lista[pos]; lbImg.src=it.src; lbImg.alt=it.cap; lbCap.textContent=it.cap;
+  document.getElementById("lbPrev").hidden=document.getElementById("lbNext").hidden=lista.length<2;}
+function close(){lb.hidden=true;lbImg.removeAttribute("src");}
+function step(d){pos=(pos+d+lista.length)%lista.length;show();}
+document.addEventListener("click",e=>{
+  const z=e.target.closest("[data-zoom]");
+  if(z){const all=[...document.querySelectorAll("[data-zoom]")].filter(x=>!x.closest("[hidden]"));
+    lista=all.map(x=>({src:x.dataset.src,cap:x.dataset.cap}));pos=all.indexOf(z);show();lb.hidden=false;document.getElementById("lbClose").focus();return;}
+  if(e.target===lb||e.target.id==="lbClose") close();
+  if(e.target.id==="lbPrev") step(-1);
+  if(e.target.id==="lbNext") step(1);
+});
+document.addEventListener("keydown",e=>{if(lb.hidden) return; if(e.key==="Escape") close(); if(e.key==="ArrowLeft") step(-1); if(e.key==="ArrowRight") step(1);});
+/* carrito */
+let cart=[]; try{cart=JSON.parse(localStorage.getItem("krypto-cart")||"[]").filter(x=>M[x.i]&&TALLAS.includes(x.t)&&x.q>0);}catch{cart=[];}
+const save=()=>{try{localStorage.setItem("krypto-cart",JSON.stringify(cart));}catch{}};
+function pedidoTexto(){
+  const lineas=cart.map(x=>`• ${x.q} × ${M[x.i][0]} (${M[x.i][1]}) talla ${x.t}`);
+  const total=cart.reduce((a,x)=>a+x.q,0);
+  return `Hola Krypto, quiero pedir estas sudaderas:\n${lineas.join("\n")}\nTotal: ${total} ${total===1?"pieza":"piezas"}${PRECIO?` · $${(total*PRECIO).toLocaleString("es-MX")} MXN`:""}\n¿Me confirman precio y entrega?`;
+}
+function pintaCarrito(){
+  const n=cart.reduce((a,x)=>a+x.q,0);
+  document.getElementById("cartCount").textContent=n;
+  const box=document.getElementById("items");
+  box.innerHTML=cart.length?cart.map((x,k)=>`<div class="it"><img src="img/p${pad(x.i+1)}.jpg" alt=""><div><b>${M[x.i][0]}</b><small>${M[x.i][1]} · Talla ${x.t}</small></div>
+    <div class="qty"><button type="button" data-k="${k}" data-d="-1" aria-label="Quitar una">−</button><span>${x.q}</span><button type="button" data-k="${k}" data-d="1" aria-label="Agregar una">+</button></div></div>`).join("")
+    :'<p class="vacio">Tu carrito está vacío. Elige una talla y toca "Agregar al carrito".</p>';
+  const wa=document.getElementById("waLink");
+  wa.hidden=!cart.length; document.getElementById("copyOrder").hidden=!cart.length;
+  wa.href=`https://wa.me/${WA}?text=${encodeURIComponent(pedidoTexto())}`;
+}
+function abrirCarrito(v){document.getElementById("drawer").hidden=!v;document.getElementById("velo").hidden=!v;if(v) document.getElementById("cartClose").focus();}
+fichas.addEventListener("click",e=>{
+  const t=e.target.closest(".tallas button");
+  if(t){t.parentElement.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===t));return;}
+  const a=e.target.closest(".add"); if(!a) return;
+  const i=+a.dataset.i, talla=fichas.querySelector(`.tallas[data-i="${i}"] [aria-pressed="true"]`).dataset.t;
+  const ex=cart.find(x=>x.i===i&&x.t===talla); ex?ex.q++:cart.push({i,t:talla,q:1});
+  save(); pintaCarrito();
+  a.textContent="Agregada ✓"; a.classList.add("ok"); setTimeout(()=>{a.textContent="Agregar al carrito";a.classList.remove("ok");},1400);
+  const cb=document.getElementById("cartBtn"); cb.classList.remove("bump"); void cb.offsetWidth; cb.classList.add("bump");
+});
+document.getElementById("cartBtn").onclick=()=>abrirCarrito(true);
+document.getElementById("cartClose").onclick=()=>abrirCarrito(false);
+document.getElementById("velo").onclick=()=>abrirCarrito(false);
+document.getElementById("items").addEventListener("click",e=>{
+  const b=e.target.closest("button[data-k]"); if(!b) return;
+  const x=cart[+b.dataset.k]; x.q+=+b.dataset.d; if(x.q<=0) cart.splice(+b.dataset.k,1);
+  save(); pintaCarrito();
+});
+document.getElementById("copyOrder").onclick=async e=>{
+  const b=e.currentTarget;
+  try{await navigator.clipboard.writeText(pedidoTexto());b.textContent="Pedido copiado ✓";}
+  catch{b.textContent="No se pudo copiar";}
+  setTimeout(()=>b.textContent="Copiar pedido",1800);
+};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("drawer").hidden) abrirCarrito(false);});
+pintaCarrito();
+
+let tx=null; lb.addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener("touchend",e=>{if(tx===null) return; const d=e.changedTouches[0].clientX-tx; if(Math.abs(d)>50) step(d<0?1:-1); tx=null;});
+</script>
+
+</body>
+</html>
